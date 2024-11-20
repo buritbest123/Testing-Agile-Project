@@ -131,14 +131,12 @@ Please follow these setup:
 - 
 
 ### Running the Tests
-
+ ```bash
+    npx jest
+ ```
 
 ### 📝 Test Cases Summary
 
-#### 1. Test Suite...
-**Purpose:** ✅ Tests if...
-- **Method:** `testFile`
-- **Expected Result:** ...
 
 #### 🎯 Coverage Report
 ![Coverage Report](./project%20phase%202/assets/Unit_Test_Report.jpg)
