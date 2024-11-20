@@ -1,0 +1,2340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.11.0 on win32)" generated="2024-11-20T18:05:17.281676" rpa="false" schemaversion="5">
+<suite id="s1" name="TestAddCart 1 &amp; TestAddCart 2 &amp; TestAddCart 3 &amp; TestFilterBakery &amp; TestFilterCoffee &amp; TestFilterMatcha &amp; TestSearch 1 &amp; TestSearch 2 &amp; TestSearch 3">
+<suite id="s1-s1" name="TestAddCart 1" source="C:\Software Quality\Testcase\ITCS473-Project-Phase2-ChickyShiningSparklingStar_CuteCute\project phase 2\automated test cases\TestAddCart_1.robot">
+<test id="s1-s1-t1" name="Test opening browser" line="20">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:17.610728" level="INFO">Opening browser 'Chrome' to base url 'http://10.34.112.130:3000/'.</msg>
+<arg>${bash_url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-11-20T18:05:17.610728" elapsed="3.169391"/>
+</kw>
+<status status="PASS" start="2024-11-20T18:05:17.609744" elapsed="3.170375"/>
+</test>
+<test id="s1-s1-t2" name="Search Caramel Fresh Milk" line="23">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:20.781118" level="INFO">Typing text 'Caramel Fresh Milk' into text field 'css:#searchInput'.</msg>
+<arg>${search_bar}</arg>
+<arg>${search_keyword}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:20.781118" elapsed="0.307736"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${search_result_container}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-20T18:05:21.090121" elapsed="0.518683"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:21.627567" level="INFO">${menus} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="2a8e997c53b5cc5cf3940a17f962a6c2", element="f.1FCF3F8DE20993AA7D137AE5042F99AC.d.D78DA84FC0C67842E62620B98EB7F5A1.e.19")&gt;]</msg>
+<var>${menus}</var>
+<arg>${search_result_container} &gt;&gt; ${menus}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:21.608804" elapsed="0.018763"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:21.640854" level="INFO">${menu_title} = Caramel Fresh Milk</msg>
+<var>${menu_title}</var>
+<arg>${item}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:21.628576" elapsed="0.012278"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${menu_title.lower()}</arg>
+<arg>${search_keyword.lower()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-11-20T18:05:21.640854" elapsed="0.001000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:21.642866" level="INFO">Clicking element 'css:#Card &gt; a &gt; div.Card_cardAddToCart__ji65r'.</msg>
+<arg>css:#Card &gt; a &gt; div.Card_cardAddToCart__ji65r</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:21.642866" elapsed="0.081927"/>
+</kw>
+<arg>'${menu_title.lower()}' == '${search_keyword.lower()}'</arg>
+<arg>Click Element</arg>
+<arg>css:#Card &gt; a &gt; div.Card_cardAddToCart__ji65r</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-11-20T18:05:21.641854" elapsed="0.082939"/>
+</kw>
+<var name="${item}">&lt;selenium.webdriver.remote.webelement.WebElement (session="2a8e997c53b5cc5cf3940a17f962a6c2", element="f.1FCF3F8DE20993AA7D137AE5042F99AC.d.D78DA84FC0C67842E62620B98EB7F5A1.e.19")&gt;</var>
+<status status="PASS" start="2024-11-20T18:05:21.628576" elapsed="0.096217"/>
+</iter>
+<var>${item}</var>
+<value>@{menus}</value>
+<status status="PASS" start="2024-11-20T18:05:21.627567" elapsed="0.097226"/>
+</for>
+<status status="PASS" start="2024-11-20T18:05:20.781118" elapsed="0.943675"/>
+</test>
+<test id="s1-s1-t3" name="Select Caramel Fresh Milk" line="34">
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:21.740785" level="INFO">${menus} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="2a8e997c53b5cc5cf3940a17f962a6c2", element="f.1FCF3F8DE20993AA7D137AE5042F99AC.d.D78DA84FC0C67842E62620B98EB7F5A1.e.19")&gt;]</msg>
+<var>${menus}</var>
+<arg>${search_result_container} &gt;&gt; ${menus}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:21.725985" elapsed="0.014800"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:21.750193" level="INFO">${menu_title} = Caramel Fresh Milk</msg>
+<var>${menu_title}</var>
+<arg>${item}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:21.741798" elapsed="0.008395"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-11-20T18:05:21.752369" level="INFO">${is_match} = True</msg>
+<var>${is_match}</var>
+<arg>'${search_keyword.lower()}' in '${menu_title.lower()}'</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-11-20T18:05:21.751359" elapsed="0.001010"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Add Item To Cart">
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:21.760331" level="INFO">${add_button} = &lt;selenium.webdriver.remote.webelement.WebElement (session="2a8e997c53b5cc5cf3940a17f962a6c2", element="f.1FCF3F8DE20993AA7D137AE5042F99AC.d.D78DA84FC0C67842E62620B98EB7F5A1.e.20")&gt;</msg>
+<var>${add_button}</var>
+<arg>css:#Card &gt; a &gt; div.Card_cardAddToCart__ji65r</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:21.753377" elapsed="0.006954"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:21.760331" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="2a8e997c53b5cc5cf3940a17f962a6c2", element="f.1FCF3F8DE20993AA7D137AE5042F99AC.d.D78DA84FC0C67842E62620B98EB7F5A1.e.20")&gt;'.</msg>
+<arg>${add_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:21.760331" elapsed="0.055476"/>
+</kw>
+<arg>${item}</arg>
+<status status="PASS" start="2024-11-20T18:05:21.752369" elapsed="0.064437"/>
+</kw>
+<arg>${is_match}</arg>
+<arg>Add Item To Cart</arg>
+<arg>${item}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-11-20T18:05:21.752369" elapsed="0.064437"/>
+</kw>
+<kw name="Exit For Loop If" owner="BuiltIn">
+<msg time="2024-11-20T18:05:21.816806" level="INFO">Exiting for loop altogether.</msg>
+<arg>${is_match}</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="PASS" start="2024-11-20T18:05:21.816806" elapsed="0.000000"/>
+</kw>
+<var name="${item}">&lt;selenium.webdriver.remote.webelement.WebElement (session="2a8e997c53b5cc5cf3940a17f962a6c2", element="f.1FCF3F8DE20993AA7D137AE5042F99AC.d.D78DA84FC0C67842E62620B98EB7F5A1.e.19")&gt;</var>
+<status status="PASS" start="2024-11-20T18:05:21.741798" elapsed="0.075008"/>
+</iter>
+<var>${item}</var>
+<value>@{menus}</value>
+<status status="PASS" start="2024-11-20T18:05:21.740785" elapsed="0.076021"/>
+</for>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${describtion_container}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-11-20T18:05:21.816806" elapsed="0.221664"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:22.058651" level="INFO">${menu_title} = Caramel Fresh Milk</msg>
+<var>${menu_title}</var>
+<arg>css:#description-page &gt; div &gt; h1</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:22.038470" elapsed="0.020181"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${menu_title.lower()}</arg>
+<arg>${search_keyword.lower()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-11-20T18:05:22.058651" elapsed="0.000999"/>
+</kw>
+<status status="PASS" start="2024-11-20T18:05:21.725985" elapsed="0.333665"/>
+</test>
+<test id="s1-s1-t4" name="Select Type, Add-on, Sweetness of Caramel Fresh Milk" line="48">
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:22.072152" level="INFO">${type_cold} = &lt;selenium.webdriver.remote.webelement.WebElement (session="2a8e997c53b5cc5cf3940a17f962a6c2", element="f.1FCF3F8DE20993AA7D137AE5042F99AC.d.D78DA84FC0C67842E62620B98EB7F5A1.e.25")&gt;</msg>
+<var>${type_cold}</var>
+<arg>css:#description-page &gt; div &gt; div &gt; div:nth-child(2) &gt; button.description_option__pWJJk.description_selected__k62fm</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:22.061781" elapsed="0.010371"/>
+</kw>
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:22.081959" level="INFO">${sweetness_50} = &lt;selenium.webdriver.remote.webelement.WebElement (session="2a8e997c53b5cc5cf3940a17f962a6c2", element="f.1FCF3F8DE20993AA7D137AE5042F99AC.d.D78DA84FC0C67842E62620B98EB7F5A1.e.26")&gt;</msg>
+<var>${sweetness_50}</var>
+<arg>css:#description-page &gt; div &gt; div &gt; div:nth-child(6) &gt; button.description_option__pWJJk.description_selected__k62fm</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:22.072152" elapsed="0.009807"/>
+</kw>
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:22.093619" level="INFO">${add_on_oat_milk} = &lt;selenium.webdriver.remote.webelement.WebElement (session="2a8e997c53b5cc5cf3940a17f962a6c2", element="f.1FCF3F8DE20993AA7D137AE5042F99AC.d.D78DA84FC0C67842E62620B98EB7F5A1.e.27")&gt;</msg>
+<var>${add_on_oat_milk}</var>
+<arg>css:#Options &gt; button:nth-child(1)</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:22.083047" elapsed="0.010572"/>
+</kw>
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:22.103128" level="INFO">${addCart_button} = &lt;selenium.webdriver.remote.webelement.WebElement (session="2a8e997c53b5cc5cf3940a17f962a6c2", element="f.1FCF3F8DE20993AA7D137AE5042F99AC.d.D78DA84FC0C67842E62620B98EB7F5A1.e.28")&gt;</msg>
+<var>${addCart_button}</var>
+<arg>css:#description-page &gt; div &gt; div &gt; button</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:22.093619" elapsed="0.009509"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:22.104132" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="2a8e997c53b5cc5cf3940a17f962a6c2", element="f.1FCF3F8DE20993AA7D137AE5042F99AC.d.D78DA84FC0C67842E62620B98EB7F5A1.e.27")&gt;'.</msg>
+<arg>${add_on_oat_milk}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:22.104132" elapsed="0.059808"/>
+</kw>
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:22.174494" level="INFO">${add_on_oat_milk_clicked} = &lt;selenium.webdriver.remote.webelement.WebElement (session="2a8e997c53b5cc5cf3940a17f962a6c2", element="f.1FCF3F8DE20993AA7D137AE5042F99AC.d.D78DA84FC0C67842E62620B98EB7F5A1.e.27")&gt;</msg>
+<var>${add_on_oat_milk_clicked}</var>
+<arg>css:#Options &gt; button.description_option__pWJJk.description_selected__k62fm</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:22.163940" elapsed="0.010554"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:22.181979" level="INFO">Element '&lt;selenium.webdriver.remote.webelement.WebElement (session="2a8e997c53b5cc5cf3940a17f962a6c2", element="f.1FCF3F8DE20993AA7D137AE5042F99AC.d.D78DA84FC0C67842E62620B98EB7F5A1.e.27")&gt;' is displayed.</msg>
+<arg>${add_on_oat_milk_clicked}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-20T18:05:22.174494" elapsed="0.007485"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:22.182979" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="2a8e997c53b5cc5cf3940a17f962a6c2", element="f.1FCF3F8DE20993AA7D137AE5042F99AC.d.D78DA84FC0C67842E62620B98EB7F5A1.e.25")&gt;'.</msg>
+<arg>${type_cold}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:22.182979" elapsed="0.052496"/>
+</kw>
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:22.243237" level="INFO">${clicked_type_cold} = &lt;selenium.webdriver.remote.webelement.WebElement (session="2a8e997c53b5cc5cf3940a17f962a6c2", element="f.1FCF3F8DE20993AA7D137AE5042F99AC.d.D78DA84FC0C67842E62620B98EB7F5A1.e.25")&gt;</msg>
+<var>${clicked_type_cold}</var>
+<arg>css:#description-page &gt; div &gt; div &gt; div:nth-child(2) &gt; button.description_option__pWJJk.description_selected__k62fm</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:22.235475" elapsed="0.007762"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${clicked_type_cold}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-11-20T18:05:22.244235" elapsed="0.000000"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:22.252698" level="INFO">Element '&lt;selenium.webdriver.remote.webelement.WebElement (session="2a8e997c53b5cc5cf3940a17f962a6c2", element="f.1FCF3F8DE20993AA7D137AE5042F99AC.d.D78DA84FC0C67842E62620B98EB7F5A1.e.25")&gt;' is displayed.</msg>
+<arg>${clicked_type_cold}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-20T18:05:22.244235" elapsed="0.008463"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:22.253698" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="2a8e997c53b5cc5cf3940a17f962a6c2", element="f.1FCF3F8DE20993AA7D137AE5042F99AC.d.D78DA84FC0C67842E62620B98EB7F5A1.e.26")&gt;'.</msg>
+<arg>${sweetness_50}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:22.253698" elapsed="0.053141"/>
+</kw>
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:22.314517" level="INFO">${clicked_sweetness_50} = &lt;selenium.webdriver.remote.webelement.WebElement (session="2a8e997c53b5cc5cf3940a17f962a6c2", element="f.1FCF3F8DE20993AA7D137AE5042F99AC.d.D78DA84FC0C67842E62620B98EB7F5A1.e.26")&gt;</msg>
+<var>${clicked_sweetness_50}</var>
+<arg>css:#description-page &gt; div &gt; div &gt; div:nth-child(6) &gt; button.description_option__pWJJk.description_selected__k62fm</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:22.306839" elapsed="0.007678"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${clicked_sweetness_50}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-11-20T18:05:22.314517" elapsed="0.001041"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:22.324896" level="INFO">Element '&lt;selenium.webdriver.remote.webelement.WebElement (session="2a8e997c53b5cc5cf3940a17f962a6c2", element="f.1FCF3F8DE20993AA7D137AE5042F99AC.d.D78DA84FC0C67842E62620B98EB7F5A1.e.26")&gt;' is displayed.</msg>
+<arg>${clicked_sweetness_50}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-20T18:05:22.315558" elapsed="0.009338"/>
+</kw>
+<status status="PASS" start="2024-11-20T18:05:22.060647" elapsed="0.264249"/>
+</test>
+<test id="s1-s1-t5" name="Add Caramel Fresh Milk To Cart" line="68">
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:22.333562" level="INFO">${addCart_button} = &lt;selenium.webdriver.remote.webelement.WebElement (session="2a8e997c53b5cc5cf3940a17f962a6c2", element="f.1FCF3F8DE20993AA7D137AE5042F99AC.d.D78DA84FC0C67842E62620B98EB7F5A1.e.28")&gt;</msg>
+<var>${addCart_button}</var>
+<arg>css:#description-page &gt; div &gt; div &gt; button</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:22.326877" elapsed="0.006685"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:22.333562" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="2a8e997c53b5cc5cf3940a17f962a6c2", element="f.1FCF3F8DE20993AA7D137AE5042F99AC.d.D78DA84FC0C67842E62620B98EB7F5A1.e.28")&gt;'.</msg>
+<arg>${addCart_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:22.333562" elapsed="0.057245"/>
+</kw>
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:22.403104" level="INFO">${successful_container} = &lt;selenium.webdriver.remote.webelement.WebElement (session="2a8e997c53b5cc5cf3940a17f962a6c2", element="f.1FCF3F8DE20993AA7D137AE5042F99AC.d.D78DA84FC0C67842E62620B98EB7F5A1.e.30")&gt;</msg>
+<var>${successful_container}</var>
+<arg>css:body &gt; main &gt; div.description_modal-overlay__pwguD &gt; div</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:22.390807" elapsed="0.012297"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${successful_container}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-20T18:05:22.404115" elapsed="0.005996"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:22.429869" level="INFO">${successful_text} = Item added to cart successfully!</msg>
+<var>${successful_text}</var>
+<arg>css:body &gt; main &gt; div.description_modal-overlay__pwguD &gt; div &gt; p</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:22.410111" elapsed="0.019758"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${successful_text}</arg>
+<arg>Item added to cart successfully!</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-11-20T18:05:22.430936" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-11-20T18:05:22.325879" elapsed="0.105057"/>
+</test>
+<test id="s1-s1-t6" name="Navigate Back To Homepage After Add Caramel Fresh Milk" line="76">
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:22.441486" level="INFO">${close_button} = &lt;selenium.webdriver.remote.webelement.WebElement (session="2a8e997c53b5cc5cf3940a17f962a6c2", element="f.1FCF3F8DE20993AA7D137AE5042F99AC.d.D78DA84FC0C67842E62620B98EB7F5A1.e.32")&gt;</msg>
+<var>${close_button}</var>
+<arg>css:body &gt; main &gt; div.description_modal-overlay__pwguD &gt; div &gt; button</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:22.431945" elapsed="0.009541"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:22.442522" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="2a8e997c53b5cc5cf3940a17f962a6c2", element="f.1FCF3F8DE20993AA7D137AE5042F99AC.d.D78DA84FC0C67842E62620B98EB7F5A1.e.32")&gt;'.</msg>
+<arg>${close_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:22.442522" elapsed="0.062433"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${homepage}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-11-20T18:05:22.504955" elapsed="0.073699"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:22.613772" level="INFO">Element 'css:body &gt; main' is displayed.</msg>
+<arg>${homepage}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-20T18:05:22.578654" elapsed="0.035118"/>
+</kw>
+<status status="PASS" start="2024-11-20T18:05:22.431945" elapsed="0.182843"/>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-11-20T18:05:22.615788" elapsed="2.221368"/>
+</kw>
+<status status="PASS" start="2024-11-20T18:05:17.309151" elapsed="7.528005"/>
+</suite>
+<suite id="s1-s2" name="TestAddCart 2" source="C:\Software Quality\Testcase\ITCS473-Project-Phase2-ChickyShiningSparklingStar_CuteCute\project phase 2\automated test cases\TestAddCart_2.robot">
+<test id="s1-s2-t1" name="Test opening browser" line="21">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:24.842724" level="INFO">Opening browser 'Chrome' to base url 'http://10.34.112.130:3000/'.</msg>
+<arg>${bash_url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-11-20T18:05:24.842724" elapsed="3.182963"/>
+</kw>
+<status status="PASS" start="2024-11-20T18:05:24.842724" elapsed="3.183963"/>
+</test>
+<test id="s1-s2-t2" name="Search Orange Matcha" line="24">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:28.028688" level="INFO">Typing text 'Orange Matcha' into text field 'css:#searchInput'.</msg>
+<arg>${search_bar}</arg>
+<arg>${search_keyword}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:28.027694" elapsed="0.290615"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${search_result_container}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-20T18:05:28.318309" elapsed="0.675885"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:29.013188" level="INFO">${menus} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="1e4fa9dfbaa3cd561da88a3eb615d333", element="f.7A767C0B83B0CD3196EC657B0980A6B7.d.69A3DDE8781AED8D05190CA3F5E25F1F.e.20")&gt;]</msg>
+<var>${menus}</var>
+<arg>${search_result_container} &gt;&gt; ${menus}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:28.994194" elapsed="0.018994"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:29.028905" level="INFO">${menu_title} = Orange Matcha 👍</msg>
+<var>${menu_title}</var>
+<arg>${item}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:29.014433" elapsed="0.014472"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${menu_title.lower()}</arg>
+<arg>${search_keyword.lower()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-11-20T18:05:29.028905" elapsed="0.001178"/>
+</kw>
+<var name="${item}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1e4fa9dfbaa3cd561da88a3eb615d333", element="f.7A767C0B83B0CD3196EC657B0980A6B7.d.69A3DDE8781AED8D05190CA3F5E25F1F.e.20")&gt;</var>
+<status status="PASS" start="2024-11-20T18:05:29.014433" elapsed="0.015650"/>
+</iter>
+<var>${item}</var>
+<value>@{menus}</value>
+<status status="PASS" start="2024-11-20T18:05:29.014433" elapsed="0.015650"/>
+</for>
+<status status="PASS" start="2024-11-20T18:05:28.027694" elapsed="1.002389"/>
+</test>
+<test id="s1-s2-t3" name="Select Orange Matcha" line="34">
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:29.047429" level="INFO">${menus} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="1e4fa9dfbaa3cd561da88a3eb615d333", element="f.7A767C0B83B0CD3196EC657B0980A6B7.d.69A3DDE8781AED8D05190CA3F5E25F1F.e.20")&gt;]</msg>
+<var>${menus}</var>
+<arg>${search_result_container} &gt;&gt; ${menus}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:29.031571" elapsed="0.015858"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:29.057849" level="INFO">${menu_title} = Orange Matcha 👍</msg>
+<var>${menu_title}</var>
+<arg>${item}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:29.048430" elapsed="0.009419"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-11-20T18:05:29.058882" level="INFO">${is_match} = True</msg>
+<var>${is_match}</var>
+<arg>'${search_keyword.lower()}' in '${menu_title.lower()}'</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-11-20T18:05:29.057849" elapsed="0.001033"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Add Item To Cart">
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:29.072643" level="INFO">${add_button} = &lt;selenium.webdriver.remote.webelement.WebElement (session="1e4fa9dfbaa3cd561da88a3eb615d333", element="f.7A767C0B83B0CD3196EC657B0980A6B7.d.69A3DDE8781AED8D05190CA3F5E25F1F.e.21")&gt;</msg>
+<var>${add_button}</var>
+<arg>css:#Card &gt; a &gt; div.Card_cardAddToCart__ji65r</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:29.059943" elapsed="0.012700"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:29.072643" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="1e4fa9dfbaa3cd561da88a3eb615d333", element="f.7A767C0B83B0CD3196EC657B0980A6B7.d.69A3DDE8781AED8D05190CA3F5E25F1F.e.21")&gt;'.</msg>
+<arg>${add_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:29.072643" elapsed="0.072988"/>
+</kw>
+<arg>${item}</arg>
+<status status="PASS" start="2024-11-20T18:05:29.058882" elapsed="0.086749"/>
+</kw>
+<arg>${is_match}</arg>
+<arg>Add Item To Cart</arg>
+<arg>${item}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-11-20T18:05:29.058882" elapsed="0.086749"/>
+</kw>
+<kw name="Exit For Loop If" owner="BuiltIn">
+<msg time="2024-11-20T18:05:29.146970" level="INFO">Exiting for loop altogether.</msg>
+<arg>${is_match}</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="PASS" start="2024-11-20T18:05:29.145631" elapsed="0.001339"/>
+</kw>
+<var name="${item}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1e4fa9dfbaa3cd561da88a3eb615d333", element="f.7A767C0B83B0CD3196EC657B0980A6B7.d.69A3DDE8781AED8D05190CA3F5E25F1F.e.20")&gt;</var>
+<status status="PASS" start="2024-11-20T18:05:29.048430" elapsed="0.098540"/>
+</iter>
+<var>${item}</var>
+<value>@{menus}</value>
+<status status="PASS" start="2024-11-20T18:05:29.048430" elapsed="0.098540"/>
+</for>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${describtion_container}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-11-20T18:05:29.146970" elapsed="0.219244"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:29.383399" level="INFO">${menu_title} = Orange Matcha</msg>
+<var>${menu_title}</var>
+<arg>css:#description-page &gt; div &gt; h1</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:29.366214" elapsed="0.017185"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${menu_title.lower()}</arg>
+<arg>${search_keyword.lower()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-11-20T18:05:29.384430" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-11-20T18:05:29.031571" elapsed="0.352859"/>
+</test>
+<test id="s1-s2-t4" name="Select Type, Add-on, Sweetness of Orange Matcha" line="48">
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:29.397924" level="INFO">${type_cold} = &lt;selenium.webdriver.remote.webelement.WebElement (session="1e4fa9dfbaa3cd561da88a3eb615d333", element="f.7A767C0B83B0CD3196EC657B0980A6B7.d.69A3DDE8781AED8D05190CA3F5E25F1F.e.26")&gt;</msg>
+<var>${type_cold}</var>
+<arg>css:#description-page &gt; div &gt; div &gt; div:nth-child(2) &gt; button</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:29.387227" elapsed="0.010697"/>
+</kw>
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:29.408344" level="INFO">${sweetness_75} = &lt;selenium.webdriver.remote.webelement.WebElement (session="1e4fa9dfbaa3cd561da88a3eb615d333", element="f.7A767C0B83B0CD3196EC657B0980A6B7.d.69A3DDE8781AED8D05190CA3F5E25F1F.e.27")&gt;</msg>
+<var>${sweetness_75}</var>
+<arg>css:#description-page &gt; div &gt; div &gt; div:nth-child(4) &gt; button.description_option__pWJJk.description_selected__k62fm</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:29.398923" elapsed="0.010421"/>
+</kw>
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:29.418594" level="INFO">${addCart_button} = &lt;selenium.webdriver.remote.webelement.WebElement (session="1e4fa9dfbaa3cd561da88a3eb615d333", element="f.7A767C0B83B0CD3196EC657B0980A6B7.d.69A3DDE8781AED8D05190CA3F5E25F1F.e.28")&gt;</msg>
+<var>${addCart_button}</var>
+<arg>css:#description-page &gt; div &gt; div &gt; button</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:29.409344" elapsed="0.009250"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:29.418594" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="1e4fa9dfbaa3cd561da88a3eb615d333", element="f.7A767C0B83B0CD3196EC657B0980A6B7.d.69A3DDE8781AED8D05190CA3F5E25F1F.e.26")&gt;'.</msg>
+<arg>${type_cold}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:29.418594" elapsed="0.055023"/>
+</kw>
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:29.485051" level="INFO">${clicked_type_cold} = &lt;selenium.webdriver.remote.webelement.WebElement (session="1e4fa9dfbaa3cd561da88a3eb615d333", element="f.7A767C0B83B0CD3196EC657B0980A6B7.d.69A3DDE8781AED8D05190CA3F5E25F1F.e.26")&gt;</msg>
+<var>${clicked_type_cold}</var>
+<arg>css:#description-page &gt; div &gt; div &gt; div:nth-child(2) &gt; button.description_option__pWJJk.description_selected__k62fm</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:29.474606" elapsed="0.010445"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${clicked_type_cold}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-11-20T18:05:29.485051" elapsed="0.001295"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:29.495754" level="INFO">Element '&lt;selenium.webdriver.remote.webelement.WebElement (session="1e4fa9dfbaa3cd561da88a3eb615d333", element="f.7A767C0B83B0CD3196EC657B0980A6B7.d.69A3DDE8781AED8D05190CA3F5E25F1F.e.26")&gt;' is displayed.</msg>
+<arg>${clicked_type_cold}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-20T18:05:29.486346" elapsed="0.009408"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:29.496714" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="1e4fa9dfbaa3cd561da88a3eb615d333", element="f.7A767C0B83B0CD3196EC657B0980A6B7.d.69A3DDE8781AED8D05190CA3F5E25F1F.e.27")&gt;'.</msg>
+<arg>${sweetness_75}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:29.496714" elapsed="0.054141"/>
+</kw>
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:29.558757" level="INFO">${clicked_sweetness_75} = &lt;selenium.webdriver.remote.webelement.WebElement (session="1e4fa9dfbaa3cd561da88a3eb615d333", element="f.7A767C0B83B0CD3196EC657B0980A6B7.d.69A3DDE8781AED8D05190CA3F5E25F1F.e.27")&gt;</msg>
+<var>${clicked_sweetness_75}</var>
+<arg>css:#description-page &gt; div &gt; div &gt; div:nth-child(4) &gt; button.description_option__pWJJk.description_selected__k62fm</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:29.550855" elapsed="0.007902"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${clicked_sweetness_75}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-11-20T18:05:29.559735" elapsed="0.000000"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:29.568607" level="INFO">Element '&lt;selenium.webdriver.remote.webelement.WebElement (session="1e4fa9dfbaa3cd561da88a3eb615d333", element="f.7A767C0B83B0CD3196EC657B0980A6B7.d.69A3DDE8781AED8D05190CA3F5E25F1F.e.27")&gt;' is displayed.</msg>
+<arg>${clicked_sweetness_75}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-20T18:05:29.560449" elapsed="0.008158"/>
+</kw>
+<status status="PASS" start="2024-11-20T18:05:29.385850" elapsed="0.182757"/>
+</test>
+<test id="s1-s2-t5" name="Add Orange Matcha To Cart" line="63">
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:29.576836" level="INFO">${addCart_button} = &lt;selenium.webdriver.remote.webelement.WebElement (session="1e4fa9dfbaa3cd561da88a3eb615d333", element="f.7A767C0B83B0CD3196EC657B0980A6B7.d.69A3DDE8781AED8D05190CA3F5E25F1F.e.28")&gt;</msg>
+<var>${addCart_button}</var>
+<arg>css:#description-page &gt; div &gt; div &gt; button</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:29.569673" elapsed="0.007163"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:29.576836" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="1e4fa9dfbaa3cd561da88a3eb615d333", element="f.7A767C0B83B0CD3196EC657B0980A6B7.d.69A3DDE8781AED8D05190CA3F5E25F1F.e.28")&gt;'.</msg>
+<arg>${addCart_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:29.576836" elapsed="0.060824"/>
+</kw>
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:29.649251" level="INFO">${successful_container} = &lt;selenium.webdriver.remote.webelement.WebElement (session="1e4fa9dfbaa3cd561da88a3eb615d333", element="f.7A767C0B83B0CD3196EC657B0980A6B7.d.69A3DDE8781AED8D05190CA3F5E25F1F.e.29")&gt;</msg>
+<var>${successful_container}</var>
+<arg>css:body &gt; main &gt; div.description_modal-overlay__pwguD &gt; div</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:29.637660" elapsed="0.011591"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${successful_container}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-20T18:05:29.649251" elapsed="0.007351"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:29.676776" level="INFO">${successful_text} = Item added to cart successfully!</msg>
+<var>${successful_text}</var>
+<arg>css:body &gt; main &gt; div.description_modal-overlay__pwguD &gt; div &gt; p</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:29.656602" elapsed="0.020174"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${successful_text}</arg>
+<arg>Item added to cart successfully!</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-11-20T18:05:29.676776" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-11-20T18:05:29.569673" elapsed="0.107103"/>
+</test>
+<test id="s1-s2-t6" name="Navigate Back To Homepage After Add Orange Matcha" line="71">
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:29.689380" level="INFO">${close_button} = &lt;selenium.webdriver.remote.webelement.WebElement (session="1e4fa9dfbaa3cd561da88a3eb615d333", element="f.7A767C0B83B0CD3196EC657B0980A6B7.d.69A3DDE8781AED8D05190CA3F5E25F1F.e.31")&gt;</msg>
+<var>${close_button}</var>
+<arg>css:body &gt; main &gt; div.description_modal-overlay__pwguD &gt; div &gt; button</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:29.679301" elapsed="0.010079"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:29.689380" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="1e4fa9dfbaa3cd561da88a3eb615d333", element="f.7A767C0B83B0CD3196EC657B0980A6B7.d.69A3DDE8781AED8D05190CA3F5E25F1F.e.31")&gt;'.</msg>
+<arg>${close_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:29.689380" elapsed="0.070172"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${homepage}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-11-20T18:05:29.759552" elapsed="0.024644"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:29.844189" level="INFO">Element 'css:body &gt; main' is displayed.</msg>
+<arg>${homepage}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-20T18:05:29.784196" elapsed="0.059993"/>
+</kw>
+<status status="PASS" start="2024-11-20T18:05:29.678286" elapsed="0.165903"/>
+</test>
+<test id="s1-s2-t7" name="Search Donut" line="77">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:29.846189" level="INFO">Typing text 'Donut' into text field 'css:#searchInput'.</msg>
+<arg>${search_bar}</arg>
+<arg>${search_keyword_2}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:29.845189" elapsed="0.097806"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${search_result_container}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-20T18:05:29.944268" elapsed="0.663572"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:30.622272" level="INFO">${menus} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="1e4fa9dfbaa3cd561da88a3eb615d333", element="f.7A767C0B83B0CD3196EC657B0980A6B7.d.69A3DDE8781AED8D05190CA3F5E25F1F.e.61")&gt;]</msg>
+<var>${menus}</var>
+<arg>${search_result_container} &gt;&gt; ${menus}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:30.607840" elapsed="0.014432"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:30.630318" level="INFO">${menu_title} = Donut</msg>
+<var>${menu_title}</var>
+<arg>${item}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:30.622272" elapsed="0.008046"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${menu_title.lower()}</arg>
+<arg>${search_keyword_2.lower()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-11-20T18:05:30.631326" elapsed="0.000586"/>
+</kw>
+<var name="${item}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1e4fa9dfbaa3cd561da88a3eb615d333", element="f.7A767C0B83B0CD3196EC657B0980A6B7.d.69A3DDE8781AED8D05190CA3F5E25F1F.e.61")&gt;</var>
+<status status="PASS" start="2024-11-20T18:05:30.622272" elapsed="0.009640"/>
+</iter>
+<var>${item}</var>
+<value>@{menus}</value>
+<status status="PASS" start="2024-11-20T18:05:30.622272" elapsed="0.009640"/>
+</for>
+<status status="PASS" start="2024-11-20T18:05:29.845189" elapsed="0.786723"/>
+</test>
+<test id="s1-s2-t8" name="Select Donut" line="86">
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:30.647185" level="INFO">${menus} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="1e4fa9dfbaa3cd561da88a3eb615d333", element="f.7A767C0B83B0CD3196EC657B0980A6B7.d.69A3DDE8781AED8D05190CA3F5E25F1F.e.61")&gt;]</msg>
+<var>${menus}</var>
+<arg>${search_result_container} &gt;&gt; ${menus}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:30.633012" elapsed="0.014173"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:30.656084" level="INFO">${menu_title} = Donut</msg>
+<var>${menu_title}</var>
+<arg>${item}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:30.647185" elapsed="0.008899"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-11-20T18:05:30.657084" level="INFO">${is_match} = True</msg>
+<var>${is_match}</var>
+<arg>'${search_keyword_2.lower()}' in '${menu_title.lower()}'</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-11-20T18:05:30.656084" elapsed="0.001000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Add Item To Cart">
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:30.664085" level="INFO">${add_button} = &lt;selenium.webdriver.remote.webelement.WebElement (session="1e4fa9dfbaa3cd561da88a3eb615d333", element="f.7A767C0B83B0CD3196EC657B0980A6B7.d.69A3DDE8781AED8D05190CA3F5E25F1F.e.62")&gt;</msg>
+<var>${add_button}</var>
+<arg>css:#Card &gt; a &gt; div.Card_cardAddToCart__ji65r</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:30.657084" elapsed="0.007001"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:30.665096" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="1e4fa9dfbaa3cd561da88a3eb615d333", element="f.7A767C0B83B0CD3196EC657B0980A6B7.d.69A3DDE8781AED8D05190CA3F5E25F1F.e.62")&gt;'.</msg>
+<arg>${add_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:30.665096" elapsed="0.058779"/>
+</kw>
+<arg>${item}</arg>
+<status status="PASS" start="2024-11-20T18:05:30.657084" elapsed="0.066791"/>
+</kw>
+<arg>${is_match}</arg>
+<arg>Add Item To Cart</arg>
+<arg>${item}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-11-20T18:05:30.657084" elapsed="0.066791"/>
+</kw>
+<kw name="Exit For Loop If" owner="BuiltIn">
+<msg time="2024-11-20T18:05:30.723875" level="INFO">Exiting for loop altogether.</msg>
+<arg>${is_match}</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="PASS" start="2024-11-20T18:05:30.723875" elapsed="0.000000"/>
+</kw>
+<var name="${item}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1e4fa9dfbaa3cd561da88a3eb615d333", element="f.7A767C0B83B0CD3196EC657B0980A6B7.d.69A3DDE8781AED8D05190CA3F5E25F1F.e.61")&gt;</var>
+<status status="PASS" start="2024-11-20T18:05:30.647185" elapsed="0.076690"/>
+</iter>
+<var>${item}</var>
+<value>@{menus}</value>
+<status status="PASS" start="2024-11-20T18:05:30.647185" elapsed="0.076690"/>
+</for>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${describtion_container}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-11-20T18:05:30.725276" elapsed="0.215723"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:30.955175" level="INFO">${menu_title} = Donut</msg>
+<var>${menu_title}</var>
+<arg>css:#description-page &gt; div &gt; h1</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:30.940999" elapsed="0.014176"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${menu_title.lower()}</arg>
+<arg>${search_keyword_2.lower()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-11-20T18:05:30.955175" elapsed="0.001239"/>
+</kw>
+<status status="PASS" start="2024-11-20T18:05:30.633012" elapsed="0.323402"/>
+</test>
+<test id="s1-s2-t9" name="Add Donut To Cart" line="100">
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:30.965026" level="INFO">${addCart_button} = &lt;selenium.webdriver.remote.webelement.WebElement (session="1e4fa9dfbaa3cd561da88a3eb615d333", element="f.7A767C0B83B0CD3196EC657B0980A6B7.d.69A3DDE8781AED8D05190CA3F5E25F1F.e.67")&gt;</msg>
+<var>${addCart_button}</var>
+<arg>css:#description-page &gt; div &gt; div &gt; button</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:30.958577" elapsed="0.006449"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:30.966038" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="1e4fa9dfbaa3cd561da88a3eb615d333", element="f.7A767C0B83B0CD3196EC657B0980A6B7.d.69A3DDE8781AED8D05190CA3F5E25F1F.e.67")&gt;'.</msg>
+<arg>${addCart_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:30.965026" elapsed="0.052860"/>
+</kw>
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:31.024744" level="INFO">${successful_container} = &lt;selenium.webdriver.remote.webelement.WebElement (session="1e4fa9dfbaa3cd561da88a3eb615d333", element="f.7A767C0B83B0CD3196EC657B0980A6B7.d.69A3DDE8781AED8D05190CA3F5E25F1F.e.68")&gt;</msg>
+<var>${successful_container}</var>
+<arg>css:body &gt; main &gt; div.description_modal-overlay__pwguD &gt; div</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:31.018888" elapsed="0.005856"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${successful_container}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-20T18:05:31.025889" elapsed="0.218256"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:31.263257" level="INFO">${successful_text} = Item added to cart successfully!</msg>
+<var>${successful_text}</var>
+<arg>css:body &gt; main &gt; div.description_modal-overlay__pwguD &gt; div &gt; p</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:31.245128" elapsed="0.018129"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${successful_text}</arg>
+<arg>Item added to cart successfully!</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-11-20T18:05:31.264439" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-11-20T18:05:30.957421" elapsed="0.307018"/>
+</test>
+<test id="s1-s2-t10" name="Navigate Back To Homepage After Add Donut" line="108">
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:31.272709" level="INFO">${close_button} = &lt;selenium.webdriver.remote.webelement.WebElement (session="1e4fa9dfbaa3cd561da88a3eb615d333", element="f.7A767C0B83B0CD3196EC657B0980A6B7.d.69A3DDE8781AED8D05190CA3F5E25F1F.e.71")&gt;</msg>
+<var>${close_button}</var>
+<arg>css:body &gt; main &gt; div.description_modal-overlay__pwguD &gt; div &gt; button</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:31.265450" elapsed="0.007259"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:31.273724" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="1e4fa9dfbaa3cd561da88a3eb615d333", element="f.7A767C0B83B0CD3196EC657B0980A6B7.d.69A3DDE8781AED8D05190CA3F5E25F1F.e.71")&gt;'.</msg>
+<arg>${close_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:31.273724" elapsed="0.064232"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${homepage}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-11-20T18:05:31.337956" elapsed="0.019869"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:31.420772" level="INFO">Element 'css:body &gt; main' is displayed.</msg>
+<arg>${homepage}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-20T18:05:31.357825" elapsed="0.062947"/>
+</kw>
+<status status="PASS" start="2024-11-20T18:05:31.265450" elapsed="0.156617"/>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-11-20T18:05:31.423078" elapsed="2.240049"/>
+</kw>
+<status status="PASS" start="2024-11-20T18:05:24.838247" elapsed="8.824880"/>
+</suite>
+<suite id="s1-s3" name="TestAddCart 3" source="C:\Software Quality\Testcase\ITCS473-Project-Phase2-ChickyShiningSparklingStar_CuteCute\project phase 2\automated test cases\TestAddCart_3.robot">
+<test id="s1-s3-t1" name="Test opening browser" line="20">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:33.669573" level="INFO">Opening browser 'Chrome' to base url 'http://10.34.112.130:3000/'.</msg>
+<arg>${bash_url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-11-20T18:05:33.669573" elapsed="3.224837"/>
+</kw>
+<status status="PASS" start="2024-11-20T18:05:33.668407" elapsed="3.227031"/>
+</test>
+<test id="s1-s3-t2" name="Search Cream Cheese Danish" line="23">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:36.896421" level="INFO">Typing text 'Cream Cheese Danish' into text field 'css:#searchInput'.</msg>
+<arg>${search_bar}</arg>
+<arg>${search_keyword}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:36.896421" elapsed="0.309154"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${search_result_container}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-20T18:05:37.205575" elapsed="0.677362"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:37.903721" level="INFO">${menus} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="47d1fe02d3105cca49a8324979368b72", element="f.B03CB091F71D1F6E4E3999F95CE2CB04.d.4598C10A486AF7C1AA009E57199DA05A.e.20")&gt;]</msg>
+<var>${menus}</var>
+<arg>${search_result_container} &gt;&gt; ${menus}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:37.882937" elapsed="0.020784"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:37.917968" level="INFO">${menu_title} = Cream Cheese Danish 👍</msg>
+<var>${menu_title}</var>
+<arg>${item}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:37.904238" elapsed="0.013730"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${menu_title.lower()}</arg>
+<arg>${search_keyword.lower()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-11-20T18:05:37.917968" elapsed="0.001048"/>
+</kw>
+<var name="${item}">&lt;selenium.webdriver.remote.webelement.WebElement (session="47d1fe02d3105cca49a8324979368b72", element="f.B03CB091F71D1F6E4E3999F95CE2CB04.d.4598C10A486AF7C1AA009E57199DA05A.e.20")&gt;</var>
+<status status="PASS" start="2024-11-20T18:05:37.904238" elapsed="0.014778"/>
+</iter>
+<var>${item}</var>
+<value>@{menus}</value>
+<status status="PASS" start="2024-11-20T18:05:37.904238" elapsed="0.014778"/>
+</for>
+<status status="PASS" start="2024-11-20T18:05:36.896421" elapsed="1.022595"/>
+</test>
+<test id="s1-s3-t3" name="Select Cream Cheese Danish" line="33">
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:37.937786" level="INFO">${menus} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="47d1fe02d3105cca49a8324979368b72", element="f.B03CB091F71D1F6E4E3999F95CE2CB04.d.4598C10A486AF7C1AA009E57199DA05A.e.20")&gt;]</msg>
+<var>${menus}</var>
+<arg>${search_result_container} &gt;&gt; ${menus}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:37.921016" elapsed="0.016770"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:37.946852" level="INFO">${menu_title} = Cream Cheese Danish 👍</msg>
+<var>${menu_title}</var>
+<arg>${item}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:37.938918" elapsed="0.008937"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-11-20T18:05:37.948849" level="INFO">${is_match} = True</msg>
+<var>${is_match}</var>
+<arg>'${search_keyword.lower()}' in '${menu_title.lower()}'</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-11-20T18:05:37.947855" elapsed="0.000994"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Add Item To Cart">
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:37.958904" level="INFO">${add_button} = &lt;selenium.webdriver.remote.webelement.WebElement (session="47d1fe02d3105cca49a8324979368b72", element="f.B03CB091F71D1F6E4E3999F95CE2CB04.d.4598C10A486AF7C1AA009E57199DA05A.e.21")&gt;</msg>
+<var>${add_button}</var>
+<arg>css:#Card &gt; a &gt; div.Card_cardAddToCart__ji65r</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:37.949846" elapsed="0.009058"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:37.959912" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="47d1fe02d3105cca49a8324979368b72", element="f.B03CB091F71D1F6E4E3999F95CE2CB04.d.4598C10A486AF7C1AA009E57199DA05A.e.21")&gt;'.</msg>
+<arg>${add_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:37.959912" elapsed="0.075379"/>
+</kw>
+<arg>${item}</arg>
+<status status="PASS" start="2024-11-20T18:05:37.949846" elapsed="0.085445"/>
+</kw>
+<arg>${is_match}</arg>
+<arg>Add Item To Cart</arg>
+<arg>${item}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-11-20T18:05:37.948849" elapsed="0.086442"/>
+</kw>
+<kw name="Exit For Loop If" owner="BuiltIn">
+<msg time="2024-11-20T18:05:38.035291" level="INFO">Exiting for loop altogether.</msg>
+<arg>${is_match}</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="PASS" start="2024-11-20T18:05:38.035291" elapsed="0.001010"/>
+</kw>
+<var name="${item}">&lt;selenium.webdriver.remote.webelement.WebElement (session="47d1fe02d3105cca49a8324979368b72", element="f.B03CB091F71D1F6E4E3999F95CE2CB04.d.4598C10A486AF7C1AA009E57199DA05A.e.20")&gt;</var>
+<status status="PASS" start="2024-11-20T18:05:37.938918" elapsed="0.097383"/>
+</iter>
+<var>${item}</var>
+<value>@{menus}</value>
+<status status="PASS" start="2024-11-20T18:05:37.937786" elapsed="0.098515"/>
+</for>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${describtion_container}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-11-20T18:05:38.036301" elapsed="0.222265"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:38.283342" level="INFO">${menu_title} = Cream Cheese Danish</msg>
+<var>${menu_title}</var>
+<arg>css:#description-page &gt; div &gt; h1</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:38.258566" elapsed="0.024776"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${menu_title.lower()}</arg>
+<arg>${search_keyword.lower()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-11-20T18:05:38.284353" elapsed="0.001020"/>
+</kw>
+<status status="PASS" start="2024-11-20T18:05:37.920007" elapsed="0.365366"/>
+</test>
+<test id="s1-s3-t4" name="Add Cream Cheese Danish To Cart" line="47">
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:38.297804" level="INFO">${addCart_button} = &lt;selenium.webdriver.remote.webelement.WebElement (session="47d1fe02d3105cca49a8324979368b72", element="f.B03CB091F71D1F6E4E3999F95CE2CB04.d.4598C10A486AF7C1AA009E57199DA05A.e.26")&gt;</msg>
+<var>${addCart_button}</var>
+<arg>css:#description-page &gt; div &gt; div &gt; button</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:38.286373" elapsed="0.011431"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:38.298810" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="47d1fe02d3105cca49a8324979368b72", element="f.B03CB091F71D1F6E4E3999F95CE2CB04.d.4598C10A486AF7C1AA009E57199DA05A.e.26")&gt;'.</msg>
+<arg>${addCart_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:38.298810" elapsed="0.060558"/>
+</kw>
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:38.371359" level="INFO">${successful_container} = &lt;selenium.webdriver.remote.webelement.WebElement (session="47d1fe02d3105cca49a8324979368b72", element="f.B03CB091F71D1F6E4E3999F95CE2CB04.d.4598C10A486AF7C1AA009E57199DA05A.e.27")&gt;</msg>
+<var>${successful_container}</var>
+<arg>css:body &gt; main &gt; div.description_modal-overlay__pwguD &gt; div</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:38.360359" elapsed="0.011000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${successful_container}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-20T18:05:38.371359" elapsed="0.007109"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:38.397932" level="INFO">${successful_text} = Item added to cart successfully!</msg>
+<var>${successful_text}</var>
+<arg>css:body &gt; main &gt; div.description_modal-overlay__pwguD &gt; div &gt; p</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:38.378468" elapsed="0.019464"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${successful_text}</arg>
+<arg>Item added to cart successfully!</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-11-20T18:05:38.397932" elapsed="0.001252"/>
+</kw>
+<status status="PASS" start="2024-11-20T18:05:38.285373" elapsed="0.113811"/>
+</test>
+<test id="s1-s3-t5" name="Navigate Back To Homepage After Add Cream Cheese Danish" line="55">
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:38.410346" level="INFO">${close_button} = &lt;selenium.webdriver.remote.webelement.WebElement (session="47d1fe02d3105cca49a8324979368b72", element="f.B03CB091F71D1F6E4E3999F95CE2CB04.d.4598C10A486AF7C1AA009E57199DA05A.e.30")&gt;</msg>
+<var>${close_button}</var>
+<arg>css:body &gt; main &gt; div.description_modal-overlay__pwguD &gt; div &gt; button</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:38.400698" elapsed="0.010165"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:38.410863" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="47d1fe02d3105cca49a8324979368b72", element="f.B03CB091F71D1F6E4E3999F95CE2CB04.d.4598C10A486AF7C1AA009E57199DA05A.e.30")&gt;'.</msg>
+<arg>${close_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:38.410863" elapsed="0.069909"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${homepage}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-11-20T18:05:38.480772" elapsed="0.055480"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:38.569792" level="INFO">Element 'css:body &gt; main' is displayed.</msg>
+<arg>${homepage}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-20T18:05:38.537631" elapsed="0.032161"/>
+</kw>
+<status status="PASS" start="2024-11-20T18:05:38.399690" elapsed="0.170102"/>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-11-20T18:05:38.571121" elapsed="2.226120"/>
+</kw>
+<status status="PASS" start="2024-11-20T18:05:33.664811" elapsed="7.132430"/>
+</suite>
+<suite id="s1-s4" name="TestFilterBakery" source="C:\Software Quality\Testcase\ITCS473-Project-Phase2-ChickyShiningSparklingStar_CuteCute\project phase 2\automated test cases\TestFilterBakery.robot">
+<test id="s1-s4-t1" name="Bakery Test" line="18">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2024-11-20T18:05:40.810907" level="INFO">${BAKERY_EXPECTED_TITLES} = ['Plain Croissant', 'Chocolate Croissant 👍', 'Nutella Croissant 👍', 'Cream Cheese Danish 👍', 'Danish Custard', 'Ham Cheese Croissant', 'Croffle', 'Madeleine', 'Original Cookies', 'Lava Chocolate Cooki...</msg>
+<var>${BAKERY_EXPECTED_TITLES}</var>
+<arg>Plain Croissant</arg>
+<arg>Chocolate Croissant 👍</arg>
+<arg>Nutella Croissant 👍</arg>
+<arg>Cream Cheese Danish 👍</arg>
+<arg>Danish Custard</arg>
+<arg>Ham Cheese Croissant</arg>
+<arg>Croffle</arg>
+<arg>Madeleine</arg>
+<arg>Original Cookies</arg>
+<arg>Lava Chocolate Cookies 👍</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2024-11-20T18:05:40.810907" elapsed="0.000000"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:40.810907" level="INFO">Opening browser 'Chrome' to base url 'http://10.34.112.130:3000/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-11-20T18:05:40.810907" elapsed="3.423813"/>
+</kw>
+<kw name="Set Window Size" owner="SeleniumLibrary">
+<arg>945</arg>
+<arg>1012</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" start="2024-11-20T18:05:44.234720" elapsed="0.016090"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-11-20T18:05:45.251239" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-11-20T18:05:44.250810" elapsed="1.000429"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-20T18:05:45.251671" level="INFO">Start test</msg>
+<arg>Start test</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-20T18:05:45.251671" elapsed="0.000526"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2024-11-20T18:05:45.252197" level="INFO">Length is 37.</msg>
+<arg>${MAIN_MANU}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2024-11-20T18:05:45.252197" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:45.252197" level="INFO">Clicking element 'css=.FilterBar_filterButton__njB42:nth-child(5)'.</msg>
+<arg>${FILTER_BUTTON_BAKERY}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:45.252197" elapsed="0.104345"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${CONTAINER_LOCATOR}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-11-20T18:05:45.356542" elapsed="0.032860"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:45.405347" level="INFO">${main_elements} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="27ff671909acd6fdf47575f7ccd95b56", element="f.73344378C5E152C2629F0FD7DBC4C47A.d.02318F4E58C78BB43648DF9D81C11E98.e.21")&gt;, &lt;selenium.webdriv...</msg>
+<var>${main_elements}</var>
+<arg>xpath=//div[contains(@class, 'homepage_cardContainer__wrHEN')]//main//*[@id="CardTitle"]</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:45.389402" elapsed="0.015945"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2024-11-20T18:05:45.406361" level="INFO">Length is 10.</msg>
+<msg time="2024-11-20T18:05:45.406361" level="INFO">${count} = 10</msg>
+<var>${count}</var>
+<arg>${main_elements}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2024-11-20T18:05:45.405347" elapsed="0.001014"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-20T18:05:45.406361" level="INFO">Total number of titles: 10</msg>
+<arg>Total number of titles: ${count}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-20T18:05:45.406361" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2024-11-20T18:05:45.406361" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${count}</arg>
+<arg>10</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2024-11-20T18:05:45.406361" elapsed="0.000000"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:45.420210" level="INFO">${title_text} = Plain Croissant</msg>
+<var>${title_text}</var>
+<arg>${main_elements}[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:45.407372" elapsed="0.012838"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-20T18:05:45.420210" level="INFO">Checking title_text: Plain Croissant</msg>
+<arg>Checking title_text: ${title_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-20T18:05:45.420210" elapsed="0.001175"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${title_text}</arg>
+<arg>${BAKERY_EXPECTED_TITLES}[${i}]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-11-20T18:05:45.421385" elapsed="0.000000"/>
+</kw>
+<var name="${i}">0</var>
+<status status="PASS" start="2024-11-20T18:05:45.407372" elapsed="0.014013"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:45.432213" level="INFO">${title_text} = Chocolate Croissant 👍</msg>
+<var>${title_text}</var>
+<arg>${main_elements}[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:45.421385" elapsed="0.010828"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-20T18:05:45.433447" level="INFO">Checking title_text: Chocolate Croissant 👍</msg>
+<arg>Checking title_text: ${title_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-20T18:05:45.432213" elapsed="0.001234"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${title_text}</arg>
+<arg>${BAKERY_EXPECTED_TITLES}[${i}]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-11-20T18:05:45.433447" elapsed="0.000000"/>
+</kw>
+<var name="${i}">1</var>
+<status status="PASS" start="2024-11-20T18:05:45.421385" elapsed="0.012062"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:45.441582" level="INFO">${title_text} = Nutella Croissant 👍</msg>
+<var>${title_text}</var>
+<arg>${main_elements}[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:45.433447" elapsed="0.008135"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-20T18:05:45.442591" level="INFO">Checking title_text: Nutella Croissant 👍</msg>
+<arg>Checking title_text: ${title_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-20T18:05:45.442591" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${title_text}</arg>
+<arg>${BAKERY_EXPECTED_TITLES}[${i}]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-11-20T18:05:45.442591" elapsed="0.000000"/>
+</kw>
+<var name="${i}">2</var>
+<status status="PASS" start="2024-11-20T18:05:45.433447" elapsed="0.009144"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:45.453469" level="INFO">${title_text} = Cream Cheese Danish 👍</msg>
+<var>${title_text}</var>
+<arg>${main_elements}[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:45.442591" elapsed="0.010878"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-20T18:05:45.453469" level="INFO">Checking title_text: Cream Cheese Danish 👍</msg>
+<arg>Checking title_text: ${title_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-20T18:05:45.453469" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${title_text}</arg>
+<arg>${BAKERY_EXPECTED_TITLES}[${i}]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-11-20T18:05:45.453469" elapsed="0.001012"/>
+</kw>
+<var name="${i}">3</var>
+<status status="PASS" start="2024-11-20T18:05:45.442591" elapsed="0.011890"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:45.461266" level="INFO">${title_text} = Danish Custard</msg>
+<var>${title_text}</var>
+<arg>${main_elements}[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:45.454481" elapsed="0.006785"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-20T18:05:45.462402" level="INFO">Checking title_text: Danish Custard</msg>
+<arg>Checking title_text: ${title_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-20T18:05:45.462402" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${title_text}</arg>
+<arg>${BAKERY_EXPECTED_TITLES}[${i}]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-11-20T18:05:45.462402" elapsed="0.001018"/>
+</kw>
+<var name="${i}">4</var>
+<status status="PASS" start="2024-11-20T18:05:45.454481" elapsed="0.008939"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:45.471235" level="INFO">${title_text} = Ham Cheese Croissant</msg>
+<var>${title_text}</var>
+<arg>${main_elements}[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:45.463420" elapsed="0.007815"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-20T18:05:45.472297" level="INFO">Checking title_text: Ham Cheese Croissant</msg>
+<arg>Checking title_text: ${title_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-20T18:05:45.471235" elapsed="0.001062"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${title_text}</arg>
+<arg>${BAKERY_EXPECTED_TITLES}[${i}]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-11-20T18:05:45.472297" elapsed="0.000000"/>
+</kw>
+<var name="${i}">5</var>
+<status status="PASS" start="2024-11-20T18:05:45.463420" elapsed="0.008877"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:45.480627" level="INFO">${title_text} = Croffle</msg>
+<var>${title_text}</var>
+<arg>${main_elements}[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:45.472297" elapsed="0.008330"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-20T18:05:45.481919" level="INFO">Checking title_text: Croffle</msg>
+<arg>Checking title_text: ${title_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-20T18:05:45.481919" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${title_text}</arg>
+<arg>${BAKERY_EXPECTED_TITLES}[${i}]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-11-20T18:05:45.481919" elapsed="0.000000"/>
+</kw>
+<var name="${i}">6</var>
+<status status="PASS" start="2024-11-20T18:05:45.472297" elapsed="0.009622"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:45.488905" level="INFO">${title_text} = Madeleine</msg>
+<var>${title_text}</var>
+<arg>${main_elements}[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:45.481919" elapsed="0.006986"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-20T18:05:45.490360" level="INFO">Checking title_text: Madeleine</msg>
+<arg>Checking title_text: ${title_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-20T18:05:45.488905" elapsed="0.001455"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${title_text}</arg>
+<arg>${BAKERY_EXPECTED_TITLES}[${i}]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-11-20T18:05:45.490360" elapsed="0.000000"/>
+</kw>
+<var name="${i}">7</var>
+<status status="PASS" start="2024-11-20T18:05:45.481919" elapsed="0.008441"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:45.501499" level="INFO">${title_text} = Original Cookies</msg>
+<var>${title_text}</var>
+<arg>${main_elements}[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:45.490360" elapsed="0.011139"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-20T18:05:45.502483" level="INFO">Checking title_text: Original Cookies</msg>
+<arg>Checking title_text: ${title_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-20T18:05:45.501499" elapsed="0.000984"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${title_text}</arg>
+<arg>${BAKERY_EXPECTED_TITLES}[${i}]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-11-20T18:05:45.502483" elapsed="0.000000"/>
+</kw>
+<var name="${i}">8</var>
+<status status="PASS" start="2024-11-20T18:05:45.490360" elapsed="0.012123"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:45.511485" level="INFO">${title_text} = Lava Chocolate Cookies 👍</msg>
+<var>${title_text}</var>
+<arg>${main_elements}[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:45.502483" elapsed="0.009002"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-20T18:05:45.511485" level="INFO">Checking title_text: Lava Chocolate Cookies 👍</msg>
+<arg>Checking title_text: ${title_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-20T18:05:45.511485" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${title_text}</arg>
+<arg>${BAKERY_EXPECTED_TITLES}[${i}]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-11-20T18:05:45.511485" elapsed="0.001210"/>
+</kw>
+<var name="${i}">9</var>
+<status status="PASS" start="2024-11-20T18:05:45.502483" elapsed="0.010212"/>
+</iter>
+<var>${i}</var>
+<value>${count}</value>
+<status status="PASS" start="2024-11-20T18:05:45.406361" elapsed="0.106334"/>
+</for>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2024-11-20T18:05:45.512695" level="INFO">${BAKERY_EXPECTED_TITLES} = ['Brownies 👍', 'Donut', 'Kanom Khai']</msg>
+<var>${BAKERY_EXPECTED_TITLES}</var>
+<arg>Brownies 👍</arg>
+<arg>Donut</arg>
+<arg>Kanom Khai</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2024-11-20T18:05:45.512695" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:45.513708" level="INFO">Clicking element 'css=.tap-highlight-transparent:nth-child(4)'.</msg>
+<arg>${SECOND_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:45.513708" elapsed="0.120770"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${CONTAINER_LOCATOR}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-11-20T18:05:45.634478" elapsed="0.007141"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:45.650634" level="INFO">${main_elements} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="27ff671909acd6fdf47575f7ccd95b56", element="f.73344378C5E152C2629F0FD7DBC4C47A.d.02318F4E58C78BB43648DF9D81C11E98.e.35")&gt;, &lt;selenium.webdriv...</msg>
+<var>${main_elements}</var>
+<arg>xpath=//div[contains(@class, 'homepage_cardContainer__wrHEN')]//main//*[@id="CardTitle"]</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:45.641619" elapsed="0.009015"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2024-11-20T18:05:45.651953" level="INFO">Length is 3.</msg>
+<msg time="2024-11-20T18:05:45.651953" level="INFO">${count} = 3</msg>
+<var>${count}</var>
+<arg>${main_elements}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2024-11-20T18:05:45.651953" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-20T18:05:45.651953" level="INFO">Total number of titles: 3</msg>
+<arg>Total number of titles: ${count}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-20T18:05:45.651953" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2024-11-20T18:05:45.652968" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${count}</arg>
+<arg>3</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2024-11-20T18:05:45.652968" elapsed="0.000000"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:45.661196" level="INFO">${title_text} = Brownies 👍</msg>
+<var>${title_text}</var>
+<arg>${main_elements}[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:45.652968" elapsed="0.008228"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-20T18:05:45.662269" level="INFO">Checking title_text: Brownies 👍</msg>
+<arg>Checking title_text: ${title_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-20T18:05:45.662269" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${title_text}</arg>
+<arg>${BAKERY_EXPECTED_TITLES}[${i}]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-11-20T18:05:45.662269" elapsed="0.001024"/>
+</kw>
+<var name="${i}">0</var>
+<status status="PASS" start="2024-11-20T18:05:45.652968" elapsed="0.010325"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:45.672531" level="INFO">${title_text} = Donut</msg>
+<var>${title_text}</var>
+<arg>${main_elements}[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:45.663293" elapsed="0.009238"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-20T18:05:45.672531" level="INFO">Checking title_text: Donut</msg>
+<arg>Checking title_text: ${title_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-20T18:05:45.672531" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${title_text}</arg>
+<arg>${BAKERY_EXPECTED_TITLES}[${i}]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-11-20T18:05:45.673678" elapsed="0.000000"/>
+</kw>
+<var name="${i}">1</var>
+<status status="PASS" start="2024-11-20T18:05:45.663293" elapsed="0.010385"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:45.683731" level="INFO">${title_text} = Kanom Khai</msg>
+<var>${title_text}</var>
+<arg>${main_elements}[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:45.673678" elapsed="0.010053"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-20T18:05:45.683731" level="INFO">Checking title_text: Kanom Khai</msg>
+<arg>Checking title_text: ${title_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-20T18:05:45.683731" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${title_text}</arg>
+<arg>${BAKERY_EXPECTED_TITLES}[${i}]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-11-20T18:05:45.685046" elapsed="0.000000"/>
+</kw>
+<var name="${i}">2</var>
+<status status="PASS" start="2024-11-20T18:05:45.673678" elapsed="0.011368"/>
+</iter>
+<var>${i}</var>
+<value>${count}</value>
+<status status="PASS" start="2024-11-20T18:05:45.652968" elapsed="0.032078"/>
+</for>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-11-20T18:05:45.685046" elapsed="2.202542"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-20T18:05:47.887588" level="INFO">Test completed successfully</msg>
+<arg>Test completed successfully</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-20T18:05:47.887588" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-11-20T18:05:40.809928" elapsed="7.078874"/>
+</test>
+<status status="PASS" start="2024-11-20T18:05:40.798909" elapsed="7.090948"/>
+</suite>
+<suite id="s1-s5" name="TestFilterCoffee" source="C:\Software Quality\Testcase\ITCS473-Project-Phase2-ChickyShiningSparklingStar_CuteCute\project phase 2\automated test cases\TestFilterCoffee.robot">
+<test id="s1-s5-t1" name="Coffee Test" line="19">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2024-11-20T18:05:47.898292" level="INFO">${COFFEE_EXPECTED_TITLES} = ['Dirty 👍', 'Americano', 'Espresso', 'Latte', 'Cappuccino', 'Es-Yen (Thai Style)', 'Mocha', 'Honey Americano 👍', 'Black Yuzu 👍', 'Orange Coffee 👍']</msg>
+<var>${COFFEE_EXPECTED_TITLES}</var>
+<arg>Dirty 👍</arg>
+<arg>Americano</arg>
+<arg>Espresso</arg>
+<arg>Latte</arg>
+<arg>Cappuccino</arg>
+<arg>Es-Yen (Thai Style)</arg>
+<arg>Mocha</arg>
+<arg>Honey Americano 👍</arg>
+<arg>Black Yuzu 👍</arg>
+<arg>Orange Coffee 👍</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2024-11-20T18:05:47.898292" elapsed="0.000000"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:47.900077" level="INFO">Opening browser 'Chrome' to base url 'http://10.34.112.130:3000/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-11-20T18:05:47.899567" elapsed="3.273342"/>
+</kw>
+<kw name="Set Window Size" owner="SeleniumLibrary">
+<arg>945</arg>
+<arg>1012</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" start="2024-11-20T18:05:51.174245" elapsed="0.014362"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-11-20T18:05:52.188992" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-11-20T18:05:51.188607" elapsed="1.000385"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-20T18:05:52.188992" level="INFO">Start test</msg>
+<arg>Start test</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-20T18:05:52.188992" elapsed="0.000000"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2024-11-20T18:05:52.190009" level="INFO">Length is 37.</msg>
+<arg>${MAIN_MANU}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2024-11-20T18:05:52.190009" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:52.191006" level="INFO">Clicking element 'css=.FilterBar_filterButton__njB42:nth-child(2)'.</msg>
+<arg>${FILTER_BUTTON_COFFEE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:52.190009" elapsed="0.098493"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${CONTAINER_LOCATOR}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-11-20T18:05:52.289889" elapsed="0.012117"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:52.315263" level="INFO">${main_elements} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="b9a9004be015be5d1708ab3bff2d12f8", element="f.928B9A1E24C1E835ED5E7B19C810A079.d.786446FE20BDCE599C853F3A5AA31838.e.21")&gt;, &lt;selenium.webdriv...</msg>
+<var>${main_elements}</var>
+<arg>xpath=//div[contains(@class, 'homepage_cardContainer__wrHEN')]//main//*[@id="CardTitle"]</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:52.302006" elapsed="0.013257"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2024-11-20T18:05:52.316393" level="INFO">Length is 10.</msg>
+<msg time="2024-11-20T18:05:52.316393" level="INFO">${count} = 10</msg>
+<var>${count}</var>
+<arg>${main_elements}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2024-11-20T18:05:52.316393" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-20T18:05:52.316393" level="INFO">Total number of titles: 10</msg>
+<arg>Total number of titles: ${count}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-20T18:05:52.316393" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2024-11-20T18:05:52.317405" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${count}</arg>
+<arg>10</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2024-11-20T18:05:52.316393" elapsed="0.001012"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:52.332585" level="INFO">${title_text} = Dirty 👍</msg>
+<var>${title_text}</var>
+<arg>${main_elements}[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:52.317405" elapsed="0.015180"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-20T18:05:52.333594" level="INFO">Checking title_text: Dirty 👍</msg>
+<arg>Checking title_text: ${title_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-20T18:05:52.332585" elapsed="0.001009"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${title_text}</arg>
+<arg>${COFFEE_EXPECTED_TITLES}[${i}]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-11-20T18:05:52.333594" elapsed="0.000000"/>
+</kw>
+<var name="${i}">0</var>
+<status status="PASS" start="2024-11-20T18:05:52.317405" elapsed="0.016189"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:52.341987" level="INFO">${title_text} = Americano</msg>
+<var>${title_text}</var>
+<arg>${main_elements}[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:52.333594" elapsed="0.008393"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-20T18:05:52.342995" level="INFO">Checking title_text: Americano</msg>
+<arg>Checking title_text: ${title_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-20T18:05:52.341987" elapsed="0.001008"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${title_text}</arg>
+<arg>${COFFEE_EXPECTED_TITLES}[${i}]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-11-20T18:05:52.342995" elapsed="0.000000"/>
+</kw>
+<var name="${i}">1</var>
+<status status="PASS" start="2024-11-20T18:05:52.333594" elapsed="0.009401"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:52.351412" level="INFO">${title_text} = Espresso</msg>
+<var>${title_text}</var>
+<arg>${main_elements}[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:52.343997" elapsed="0.007415"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-20T18:05:52.352409" level="INFO">Checking title_text: Espresso</msg>
+<arg>Checking title_text: ${title_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-20T18:05:52.352409" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${title_text}</arg>
+<arg>${COFFEE_EXPECTED_TITLES}[${i}]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-11-20T18:05:52.352409" elapsed="0.000000"/>
+</kw>
+<var name="${i}">2</var>
+<status status="PASS" start="2024-11-20T18:05:52.342995" elapsed="0.009414"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:52.360998" level="INFO">${title_text} = Latte</msg>
+<var>${title_text}</var>
+<arg>${main_elements}[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:52.352409" elapsed="0.008589"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-20T18:05:52.360998" level="INFO">Checking title_text: Latte</msg>
+<arg>Checking title_text: ${title_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-20T18:05:52.360998" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${title_text}</arg>
+<arg>${COFFEE_EXPECTED_TITLES}[${i}]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-11-20T18:05:52.362083" elapsed="0.000000"/>
+</kw>
+<var name="${i}">3</var>
+<status status="PASS" start="2024-11-20T18:05:52.352409" elapsed="0.009674"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:52.371118" level="INFO">${title_text} = Cappuccino</msg>
+<var>${title_text}</var>
+<arg>${main_elements}[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:52.363098" elapsed="0.008020"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-20T18:05:52.371118" level="INFO">Checking title_text: Cappuccino</msg>
+<arg>Checking title_text: ${title_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-20T18:05:52.371118" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${title_text}</arg>
+<arg>${COFFEE_EXPECTED_TITLES}[${i}]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-11-20T18:05:52.371118" elapsed="0.001022"/>
+</kw>
+<var name="${i}">4</var>
+<status status="PASS" start="2024-11-20T18:05:52.362083" elapsed="0.010057"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:52.382605" level="INFO">${title_text} = Es-Yen (Thai Style)</msg>
+<var>${title_text}</var>
+<arg>${main_elements}[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:52.372140" elapsed="0.010465"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-20T18:05:52.383651" level="INFO">Checking title_text: Es-Yen (Thai Style)</msg>
+<arg>Checking title_text: ${title_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-20T18:05:52.383651" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${title_text}</arg>
+<arg>${COFFEE_EXPECTED_TITLES}[${i}]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-11-20T18:05:52.383651" elapsed="0.000000"/>
+</kw>
+<var name="${i}">5</var>
+<status status="PASS" start="2024-11-20T18:05:52.372140" elapsed="0.011511"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:52.392264" level="INFO">${title_text} = Mocha</msg>
+<var>${title_text}</var>
+<arg>${main_elements}[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:52.383651" elapsed="0.008613"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-20T18:05:52.393257" level="INFO">Checking title_text: Mocha</msg>
+<arg>Checking title_text: ${title_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-20T18:05:52.392264" elapsed="0.000993"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${title_text}</arg>
+<arg>${COFFEE_EXPECTED_TITLES}[${i}]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-11-20T18:05:52.393257" elapsed="0.000000"/>
+</kw>
+<var name="${i}">6</var>
+<status status="PASS" start="2024-11-20T18:05:52.383651" elapsed="0.009606"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:52.401821" level="INFO">${title_text} = Honey Americano 👍</msg>
+<var>${title_text}</var>
+<arg>${main_elements}[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:52.393257" elapsed="0.008564"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-20T18:05:52.402827" level="INFO">Checking title_text: Honey Americano 👍</msg>
+<arg>Checking title_text: ${title_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-20T18:05:52.401821" elapsed="0.001006"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${title_text}</arg>
+<arg>${COFFEE_EXPECTED_TITLES}[${i}]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-11-20T18:05:52.402827" elapsed="0.000000"/>
+</kw>
+<var name="${i}">7</var>
+<status status="PASS" start="2024-11-20T18:05:52.393257" elapsed="0.009570"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:52.413371" level="INFO">${title_text} = Black Yuzu 👍</msg>
+<var>${title_text}</var>
+<arg>${main_elements}[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:52.402827" elapsed="0.010544"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-20T18:05:52.414346" level="INFO">Checking title_text: Black Yuzu 👍</msg>
+<arg>Checking title_text: ${title_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-20T18:05:52.414346" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${title_text}</arg>
+<arg>${COFFEE_EXPECTED_TITLES}[${i}]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-11-20T18:05:52.414346" elapsed="0.000000"/>
+</kw>
+<var name="${i}">8</var>
+<status status="PASS" start="2024-11-20T18:05:52.402827" elapsed="0.011519"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:52.423465" level="INFO">${title_text} = Orange Coffee 👍</msg>
+<var>${title_text}</var>
+<arg>${main_elements}[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:52.414346" elapsed="0.009119"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-20T18:05:52.423465" level="INFO">Checking title_text: Orange Coffee 👍</msg>
+<arg>Checking title_text: ${title_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-20T18:05:52.423465" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${title_text}</arg>
+<arg>${COFFEE_EXPECTED_TITLES}[${i}]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-11-20T18:05:52.423465" elapsed="0.000000"/>
+</kw>
+<var name="${i}">9</var>
+<status status="PASS" start="2024-11-20T18:05:52.414346" elapsed="0.009119"/>
+</iter>
+<var>${i}</var>
+<value>${count}</value>
+<status status="PASS" start="2024-11-20T18:05:52.317405" elapsed="0.106060"/>
+</for>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2024-11-20T18:05:52.424540" level="INFO">${COFFEE_EXPECTED_TITLES} = ['Coconut Flower Macchiato 👍']</msg>
+<var>${COFFEE_EXPECTED_TITLES}</var>
+<arg>Coconut Flower Macchiato 👍</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2024-11-20T18:05:52.424540" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:52.425665" level="INFO">Clicking element 'css=.tap-highlight-transparent:nth-child(4)'.</msg>
+<arg>${SECOND_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:52.424540" elapsed="0.105519"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${CONTAINER_LOCATOR}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-11-20T18:05:52.531061" elapsed="0.009421"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:52.548977" level="INFO">${main_elements} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="b9a9004be015be5d1708ab3bff2d12f8", element="f.928B9A1E24C1E835ED5E7B19C810A079.d.786446FE20BDCE599C853F3A5AA31838.e.34")&gt;]</msg>
+<var>${main_elements}</var>
+<arg>xpath=//div[contains(@class, 'homepage_cardContainer__wrHEN')]//main//*[@id="CardTitle"]</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:52.540482" elapsed="0.008495"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2024-11-20T18:05:52.549975" level="INFO">Length is 1.</msg>
+<msg time="2024-11-20T18:05:52.549975" level="INFO">${count} = 1</msg>
+<var>${count}</var>
+<arg>${main_elements}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2024-11-20T18:05:52.549975" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-20T18:05:52.550970" level="INFO">Total number of titles: 1</msg>
+<arg>Total number of titles: ${count}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-20T18:05:52.550970" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2024-11-20T18:05:52.550970" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${count}</arg>
+<arg>1</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2024-11-20T18:05:52.550970" elapsed="0.000000"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:52.559865" level="INFO">${title_text} = Coconut Flower Macchiato 👍</msg>
+<var>${title_text}</var>
+<arg>${main_elements}[${0}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:52.551974" elapsed="0.007891"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-20T18:05:52.559865" level="INFO">Checking title_text: Coconut Flower Macchiato 👍</msg>
+<arg>Checking title_text: ${title_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-20T18:05:52.559865" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${title_text}</arg>
+<arg>${COFFEE_EXPECTED_TITLES}[${0}]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-11-20T18:05:52.559865" elapsed="0.001386"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-11-20T18:05:52.561251" elapsed="2.200406"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-20T18:05:54.762813" level="INFO">Test completed successfully</msg>
+<arg>Test completed successfully</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-20T18:05:54.761657" elapsed="0.001156"/>
+</kw>
+<status status="PASS" start="2024-11-20T18:05:47.898292" elapsed="6.865029"/>
+</test>
+<status status="PASS" start="2024-11-20T18:05:47.890870" elapsed="6.872451"/>
+</suite>
+<suite id="s1-s6" name="TestFilterMatcha" source="C:\Software Quality\Testcase\ITCS473-Project-Phase2-ChickyShiningSparklingStar_CuteCute\project phase 2\automated test cases\TestFilterMatcha.robot">
+<test id="s1-s6-t1" name="Matcha Test" line="18">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2024-11-20T18:05:54.771083" level="INFO">${MATCHA_EXPECTED_TITLES} = ['Clear Matcha', 'Matcha Latte', 'Orange Matcha 👍', 'Premium Matcha Latte 👍', 'Twist Matcha Latte 👍']</msg>
+<var>${MATCHA_EXPECTED_TITLES}</var>
+<arg>Clear Matcha</arg>
+<arg>Matcha Latte</arg>
+<arg>Orange Matcha 👍</arg>
+<arg>Premium Matcha Latte 👍</arg>
+<arg>Twist Matcha Latte 👍</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2024-11-20T18:05:54.771083" elapsed="0.000000"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:54.772149" level="INFO">Opening browser 'Chrome' to base url 'http://10.34.112.130:3000/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-11-20T18:05:54.772149" elapsed="3.183790"/>
+</kw>
+<kw name="Set Window Size" owner="SeleniumLibrary">
+<arg>945</arg>
+<arg>1012</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" start="2024-11-20T18:05:57.955939" elapsed="0.011393"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-11-20T18:05:58.967925" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-11-20T18:05:57.967855" elapsed="1.000070"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-20T18:05:58.968442" level="INFO">Start test</msg>
+<arg>Start test</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-20T18:05:58.968442" elapsed="0.000000"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2024-11-20T18:05:58.969504" level="INFO">Length is 37.</msg>
+<arg>${MAIN_MANU}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2024-11-20T18:05:58.968442" elapsed="0.001062"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:58.970036" level="INFO">Clicking element 'css=.FilterBar_filterButton__njB42:nth-child(3)'.</msg>
+<arg>${FILTER_BUTTON_MATCHA}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:58.970036" elapsed="0.101349"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${CONTAINER_LOCATOR}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-11-20T18:05:59.071385" elapsed="0.013001"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:59.097098" level="INFO">${main_elements} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="922fb47b7276c5f17926de353d2eabcf", element="f.2551BC9AC4782D5E8E25FB9A1ECB0056.d.85F98D2987325DB24E959378A03BF1DD.e.20")&gt;, &lt;selenium.webdriv...</msg>
+<var>${main_elements}</var>
+<arg>xpath=//div[contains(@class, 'homepage_cardContainer__wrHEN')]//main//*[@id="CardTitle"]</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:59.084386" elapsed="0.012712"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2024-11-20T18:05:59.098128" level="INFO">Length is 5.</msg>
+<msg time="2024-11-20T18:05:59.098128" level="INFO">${count} = 5</msg>
+<var>${count}</var>
+<arg>${main_elements}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2024-11-20T18:05:59.097098" elapsed="0.001030"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-20T18:05:59.098128" level="INFO">Total number of titles: 5</msg>
+<arg>Total number of titles: ${count}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-20T18:05:59.098128" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2024-11-20T18:05:59.098128" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${count}</arg>
+<arg>5</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2024-11-20T18:05:59.098128" elapsed="0.000000"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:59.113076" level="INFO">${title_text} = Clear Matcha</msg>
+<var>${title_text}</var>
+<arg>${main_elements}[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:59.099128" elapsed="0.013948"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-20T18:05:59.113076" level="INFO">Checking title_text: Clear Matcha</msg>
+<arg>Checking title_text: ${title_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-20T18:05:59.113076" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${title_text}</arg>
+<arg>${MATCHA_EXPECTED_TITLES}[${i}]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-11-20T18:05:59.114374" elapsed="0.000000"/>
+</kw>
+<var name="${i}">0</var>
+<status status="PASS" start="2024-11-20T18:05:59.099128" elapsed="0.015246"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:59.123643" level="INFO">${title_text} = Matcha Latte</msg>
+<var>${title_text}</var>
+<arg>${main_elements}[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:59.114374" elapsed="0.009269"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-20T18:05:59.123643" level="INFO">Checking title_text: Matcha Latte</msg>
+<arg>Checking title_text: ${title_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-20T18:05:59.123643" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${title_text}</arg>
+<arg>${MATCHA_EXPECTED_TITLES}[${i}]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-11-20T18:05:59.123643" elapsed="0.001344"/>
+</kw>
+<var name="${i}">1</var>
+<status status="PASS" start="2024-11-20T18:05:59.114374" elapsed="0.010613"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:59.134718" level="INFO">${title_text} = Orange Matcha 👍</msg>
+<var>${title_text}</var>
+<arg>${main_elements}[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:59.124987" elapsed="0.009731"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-20T18:05:59.135714" level="INFO">Checking title_text: Orange Matcha 👍</msg>
+<arg>Checking title_text: ${title_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-20T18:05:59.134718" elapsed="0.000996"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${title_text}</arg>
+<arg>${MATCHA_EXPECTED_TITLES}[${i}]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-11-20T18:05:59.135714" elapsed="0.000000"/>
+</kw>
+<var name="${i}">2</var>
+<status status="PASS" start="2024-11-20T18:05:59.124987" elapsed="0.010727"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:59.145361" level="INFO">${title_text} = Premium Matcha Latte 👍</msg>
+<var>${title_text}</var>
+<arg>${main_elements}[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:59.135714" elapsed="0.009647"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-20T18:05:59.145361" level="INFO">Checking title_text: Premium Matcha Latte 👍</msg>
+<arg>Checking title_text: ${title_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-20T18:05:59.145361" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${title_text}</arg>
+<arg>${MATCHA_EXPECTED_TITLES}[${i}]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-11-20T18:05:59.145361" elapsed="0.001018"/>
+</kw>
+<var name="${i}">3</var>
+<status status="PASS" start="2024-11-20T18:05:59.135714" elapsed="0.010665"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:05:59.156424" level="INFO">${title_text} = Twist Matcha Latte 👍</msg>
+<var>${title_text}</var>
+<arg>${main_elements}[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:05:59.146379" elapsed="0.010045"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-20T18:05:59.156424" level="INFO">Checking title_text: Twist Matcha Latte 👍</msg>
+<arg>Checking title_text: ${title_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-20T18:05:59.156424" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${title_text}</arg>
+<arg>${MATCHA_EXPECTED_TITLES}[${i}]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-11-20T18:05:59.156424" elapsed="0.000000"/>
+</kw>
+<var name="${i}">4</var>
+<status status="PASS" start="2024-11-20T18:05:59.146379" elapsed="0.010045"/>
+</iter>
+<var>${i}</var>
+<value>${count}</value>
+<status status="PASS" start="2024-11-20T18:05:59.098128" elapsed="0.058296"/>
+</for>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-11-20T18:05:59.157442" elapsed="2.189480"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-20T18:06:01.347921" level="INFO">Test completed successfully</msg>
+<arg>Test completed successfully</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-20T18:06:01.347921" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-11-20T18:05:54.770102" elapsed="6.577819"/>
+</test>
+<status status="PASS" start="2024-11-20T18:05:54.766102" elapsed="6.582979"/>
+</suite>
+<suite id="s1-s7" name="TestSearch 1" source="C:\Software Quality\Testcase\ITCS473-Project-Phase2-ChickyShiningSparklingStar_CuteCute\project phase 2\automated test cases\TestSearch_1.robot">
+<test id="s1-s7-t1" name="Test opening browser" line="19">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:06:01.356962" level="INFO">Opening browser 'Chrome' to base url 'http://10.34.112.130:3000/'.</msg>
+<arg>${bash_url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-11-20T18:06:01.355624" elapsed="3.267010"/>
+</kw>
+<status status="PASS" start="2024-11-20T18:06:01.355624" elapsed="3.267518"/>
+</test>
+<test id="s1-s7-t2" name="Test search function for with a keyword 'Matcha'" line="23">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:06:04.624296" level="INFO">Typing text 'Matcha' into text field 'css:#searchInput'.</msg>
+<arg>${search_bar}</arg>
+<arg>${search_keyword_matcha}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:06:04.624296" elapsed="0.242025"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${search_result_container}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-20T18:06:04.867478" elapsed="0.676280"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:06:05.563472" level="INFO">${menus} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="50b0dd834b41c00fbf1884d2c40f5540", element="f.759033D1FCC2BC23B579C4EBF222811C.d.39C0EA096238263A9D4924DF0FB3EC1B.e.19")&gt;, &lt;selenium.webdriv...</msg>
+<var>${menus}</var>
+<arg>${search_result_container} &gt;&gt; ${menus}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:06:05.544766" elapsed="0.018706"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:06:05.578225" level="INFO">${title} = Clear Matcha</msg>
+<var>${title}</var>
+<arg>${item}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:06:05.564452" elapsed="0.013773"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${title.lower()}</arg>
+<arg>${search_keyword_matcha.lower()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-11-20T18:06:05.578225" elapsed="0.001025"/>
+</kw>
+<var name="${item}">&lt;selenium.webdriver.remote.webelement.WebElement (session="50b0dd834b41c00fbf1884d2c40f5540", element="f.759033D1FCC2BC23B579C4EBF222811C.d.39C0EA096238263A9D4924DF0FB3EC1B.e.19")&gt;</var>
+<status status="PASS" start="2024-11-20T18:06:05.564452" elapsed="0.014798"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:06:05.588724" level="INFO">${title} = Matcha Latte</msg>
+<var>${title}</var>
+<arg>${item}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:06:05.579250" elapsed="0.009474"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${title.lower()}</arg>
+<arg>${search_keyword_matcha.lower()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-11-20T18:06:05.588724" elapsed="0.001018"/>
+</kw>
+<var name="${item}">&lt;selenium.webdriver.remote.webelement.WebElement (session="50b0dd834b41c00fbf1884d2c40f5540", element="f.759033D1FCC2BC23B579C4EBF222811C.d.39C0EA096238263A9D4924DF0FB3EC1B.e.20")&gt;</var>
+<status status="PASS" start="2024-11-20T18:06:05.579250" elapsed="0.010492"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:06:05.599618" level="INFO">${title} = Orange Matcha 👍</msg>
+<var>${title}</var>
+<arg>${item}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:06:05.589742" elapsed="0.009876"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${title.lower()}</arg>
+<arg>${search_keyword_matcha.lower()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-11-20T18:06:05.600620" elapsed="0.000000"/>
+</kw>
+<var name="${item}">&lt;selenium.webdriver.remote.webelement.WebElement (session="50b0dd834b41c00fbf1884d2c40f5540", element="f.759033D1FCC2BC23B579C4EBF222811C.d.39C0EA096238263A9D4924DF0FB3EC1B.e.21")&gt;</var>
+<status status="PASS" start="2024-11-20T18:06:05.589742" elapsed="0.011874"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:06:05.611778" level="INFO">${title} = Premium Matcha Latte 👍</msg>
+<var>${title}</var>
+<arg>${item}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:06:05.601616" elapsed="0.010162"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${title.lower()}</arg>
+<arg>${search_keyword_matcha.lower()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-11-20T18:06:05.611778" elapsed="0.001002"/>
+</kw>
+<var name="${item}">&lt;selenium.webdriver.remote.webelement.WebElement (session="50b0dd834b41c00fbf1884d2c40f5540", element="f.759033D1FCC2BC23B579C4EBF222811C.d.39C0EA096238263A9D4924DF0FB3EC1B.e.22")&gt;</var>
+<status status="PASS" start="2024-11-20T18:06:05.601616" elapsed="0.011164"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:06:05.621790" level="INFO">${title} = Twist Matcha Latte 👍</msg>
+<var>${title}</var>
+<arg>${item}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:06:05.612780" elapsed="0.009010"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${title.lower()}</arg>
+<arg>${search_keyword_matcha.lower()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-11-20T18:06:05.621790" elapsed="0.001206"/>
+</kw>
+<var name="${item}">&lt;selenium.webdriver.remote.webelement.WebElement (session="50b0dd834b41c00fbf1884d2c40f5540", element="f.759033D1FCC2BC23B579C4EBF222811C.d.39C0EA096238263A9D4924DF0FB3EC1B.e.23")&gt;</var>
+<status status="PASS" start="2024-11-20T18:06:05.612780" elapsed="0.010216"/>
+</iter>
+<var>${item}</var>
+<value>@{menus}</value>
+<status status="PASS" start="2024-11-20T18:06:05.564452" elapsed="0.058544"/>
+</for>
+<status status="PASS" start="2024-11-20T18:06:04.623682" elapsed="0.999314"/>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-11-20T18:06:05.624359" elapsed="2.202065"/>
+</kw>
+<status status="PASS" start="2024-11-20T18:06:01.351515" elapsed="6.474909"/>
+</suite>
+<suite id="s1-s8" name="TestSearch 2" source="C:\Software Quality\Testcase\ITCS473-Project-Phase2-ChickyShiningSparklingStar_CuteCute\project phase 2\automated test cases\TestSearch_2.robot">
+<test id="s1-s8-t1" name="Test opening browser" line="19">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:06:07.832437" level="INFO">Opening browser 'Chrome' to base url 'http://10.34.112.130:3000/'.</msg>
+<arg>${bash_url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-11-20T18:06:07.832437" elapsed="3.358771"/>
+</kw>
+<status status="PASS" start="2024-11-20T18:06:07.832437" elapsed="3.359782"/>
+</test>
+<test id="s1-s8-t2" name="Test search function with a keyword 'banana'" line="23">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:06:11.193220" level="INFO">Typing text 'banana' into text field 'css:#searchInput'.</msg>
+<arg>${search_bar}</arg>
+<arg>${search_keyword_banana}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:06:11.193220" elapsed="0.267626"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${not_found_container}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-20T18:06:11.460846" elapsed="0.439977"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:06:11.927282" level="INFO">${not_found_text} = No Result</msg>
+<var>${not_found_text}</var>
+<arg>css:#Notfound &gt; p</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:06:11.901339" elapsed="0.025943"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${not_found_text}</arg>
+<arg>No Result</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-11-20T18:06:11.927282" elapsed="0.001016"/>
+</kw>
+<status status="PASS" start="2024-11-20T18:06:11.192219" elapsed="0.736079"/>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-11-20T18:06:11.929301" elapsed="2.207156"/>
+</kw>
+<status status="PASS" start="2024-11-20T18:06:07.828411" elapsed="6.308046"/>
+</suite>
+<suite id="s1-s9" name="TestSearch 3" source="C:\Software Quality\Testcase\ITCS473-Project-Phase2-ChickyShiningSparklingStar_CuteCute\project phase 2\automated test cases\TestSearch_3.robot">
+<test id="s1-s9-t1" name="Test opening browser" line="19">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:06:14.143823" level="INFO">Opening browser 'Chrome' to base url 'http://10.34.112.130:3000/'.</msg>
+<arg>${bash_url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-11-20T18:06:14.142390" elapsed="3.178605"/>
+</kw>
+<status status="PASS" start="2024-11-20T18:06:14.142390" elapsed="3.178605"/>
+</test>
+<test id="s1-s9-t2" name="Test search function with a keyword 'กาแฟ'" line="23">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:06:17.322994" level="INFO">Typing text 'กาแฟ' into text field 'css:#searchInput'.</msg>
+<arg>${search_bar}</arg>
+<arg>${search_keyword_thai}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:06:17.322994" elapsed="0.254252"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${not_found_container}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-20T18:06:17.577246" elapsed="0.438564"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-20T18:06:18.039923" level="INFO">${not_found_text} = No Result</msg>
+<var>${not_found_text}</var>
+<arg>css:#Notfound &gt; p</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-20T18:06:18.015810" elapsed="0.024113"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${not_found_text}</arg>
+<arg>No Result</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-11-20T18:06:18.039923" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-11-20T18:06:17.321998" elapsed="0.717925"/>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-11-20T18:06:18.040936" elapsed="2.210719"/>
+</kw>
+<status status="PASS" start="2024-11-20T18:06:14.138302" elapsed="6.113353"/>
+</suite>
+<status status="PASS" start="2024-11-20T18:05:17.283706" elapsed="62.970393"/>
+</suite>
+<statistics>
+<total>
+<stat pass="30" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="30" fail="0" skip="0" id="s1" name="TestAddCart 1 &amp; TestAddCart 2 &amp; TestAddCart 3 &amp; TestFilterBakery &amp; TestFilterCoffee &amp; TestFilterMatcha &amp; TestSearch 1 &amp; TestSearch 2 &amp; TestSearch 3">TestAddCart 1 &amp; TestAddCart 2 &amp; TestAddCart 3 &amp; TestFilterBakery &amp; TestFilterCoffee &amp; TestFilterMatcha &amp; TestSearch 1 &amp; TestSearch 2 &amp; TestSearch 3</stat>
+<stat pass="6" fail="0" skip="0" id="s1-s1" name="TestAddCart 1">TestAddCart 1 &amp; TestAddCart 2 &amp; TestAddCart 3 &amp; TestFilterBakery &amp; TestFilterCoffee &amp; TestFilterMatcha &amp; TestSearch 1 &amp; TestSearch 2 &amp; TestSearch 3.TestAddCart 1</stat>
+<stat pass="10" fail="0" skip="0" id="s1-s2" name="TestAddCart 2">TestAddCart 1 &amp; TestAddCart 2 &amp; TestAddCart 3 &amp; TestFilterBakery &amp; TestFilterCoffee &amp; TestFilterMatcha &amp; TestSearch 1 &amp; TestSearch 2 &amp; TestSearch 3.TestAddCart 2</stat>
+<stat pass="5" fail="0" skip="0" id="s1-s3" name="TestAddCart 3">TestAddCart 1 &amp; TestAddCart 2 &amp; TestAddCart 3 &amp; TestFilterBakery &amp; TestFilterCoffee &amp; TestFilterMatcha &amp; TestSearch 1 &amp; TestSearch 2 &amp; TestSearch 3.TestAddCart 3</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s4" name="TestFilterBakery">TestAddCart 1 &amp; TestAddCart 2 &amp; TestAddCart 3 &amp; TestFilterBakery &amp; TestFilterCoffee &amp; TestFilterMatcha &amp; TestSearch 1 &amp; TestSearch 2 &amp; TestSearch 3.TestFilterBakery</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s5" name="TestFilterCoffee">TestAddCart 1 &amp; TestAddCart 2 &amp; TestAddCart 3 &amp; TestFilterBakery &amp; TestFilterCoffee &amp; TestFilterMatcha &amp; TestSearch 1 &amp; TestSearch 2 &amp; TestSearch 3.TestFilterCoffee</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s6" name="TestFilterMatcha">TestAddCart 1 &amp; TestAddCart 2 &amp; TestAddCart 3 &amp; TestFilterBakery &amp; TestFilterCoffee &amp; TestFilterMatcha &amp; TestSearch 1 &amp; TestSearch 2 &amp; TestSearch 3.TestFilterMatcha</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s7" name="TestSearch 1">TestAddCart 1 &amp; TestAddCart 2 &amp; TestAddCart 3 &amp; TestFilterBakery &amp; TestFilterCoffee &amp; TestFilterMatcha &amp; TestSearch 1 &amp; TestSearch 2 &amp; TestSearch 3.TestSearch 1</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s8" name="TestSearch 2">TestAddCart 1 &amp; TestAddCart 2 &amp; TestAddCart 3 &amp; TestFilterBakery &amp; TestFilterCoffee &amp; TestFilterMatcha &amp; TestSearch 1 &amp; TestSearch 2 &amp; TestSearch 3.TestSearch 2</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s9" name="TestSearch 3">TestAddCart 1 &amp; TestAddCart 2 &amp; TestAddCart 3 &amp; TestFilterBakery &amp; TestFilterCoffee &amp; TestFilterMatcha &amp; TestSearch 1 &amp; TestSearch 2 &amp; TestSearch 3.TestSearch 3</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
