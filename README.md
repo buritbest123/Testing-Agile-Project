@@ -132,14 +132,14 @@ Please follow these setup:
 
 ### Running the Tests
  ```bash
-    npx jest
+ npx jest
  ```
 
 ### 📝 Test Cases Summary
-
+![Coverage Report](./project%20phase%202/assets/Unit_Test_CoverageReport.jpg)
 
 #### 🎯 Coverage Report
-![Coverage Report](./project%20phase%202/assets/Unit_Test_Report.jpg)
+![Coverage Report in Terminal](./project%20phase%202/assets/Unit_Test_Report.jpg)
 
 --------------
 
