@@ -22,13 +22,13 @@ jobs:
           node-version: '16' 
           
       - name: Navigate to Backend
-        working-directory: "root/project phase 2/BashCoffee-CompanyA-backend"
+        working-directory: "./project phase 2/BashCoffee-CompanyA-backend"
         run: echo "Navigated to backend directory"
 
       - name: Install Dependencies
-        working-directory: "root/project phase 2/BashCoffee-CompanyA-backend"
+        working-directory: "./project phase 2/BashCoffee-CompanyA-backend"
         run: npm install
 
       - name: Run Tests
-        working-directory: "root/project phase 2/BashCoffee-CompanyA-backend"
+        working-directory: "./project phase 2/BashCoffee-CompanyA-backend"
         run: npx jest
