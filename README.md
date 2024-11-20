@@ -61,31 +61,25 @@ Bash Coffee url (Available until the end of November): [http://10.34.112.130:300
 
 
 
-if. **using window: please install [wsl](https://learn.microsoft.com/en-us/windows/wsl/install) you can skip this part if using MacOs or Linux Distribution**
-    ```bash
-        ubuntu
-    ```
-1. **run Backend**
+#. **For MacOs or Linux Distribution**
+
+    cd into backend
     ```bash
     cd "project phase 2\BashCoffee-CompanyA-backend"
     ```
-    ```bash
-    ls
-    cd Bash
-    ls
-    cd BashCoffee-CompanyA-backend
-    ```
-
+    if system did not have MongoDB. please follow this [step](https://www.mongodb.com/docs/mongodb-shell/install/)
+   
+    start MongoDB service
     ```bash
     sudo systemctl start mongod
-    /// enter your ubuntu password
     ```
 
+    Start node
     ```bash
     node server.js
     ```
 
-3. **For Windows: In the terminal**
+# **For Windows: In the terminal**
     ```bash
     npm install
     npm init -y
