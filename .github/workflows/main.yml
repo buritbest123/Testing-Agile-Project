@@ -32,3 +32,9 @@ jobs:
       - name: Run Tests
         working-directory: "./project phase 2/BashCoffee-CompanyA-backend"
         run: npx jest --coverage
+        
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          files: ./project phase 2/BashCoffee-CompanyA-backend/coverage/lcov.info
+
