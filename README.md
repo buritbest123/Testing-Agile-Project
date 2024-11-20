@@ -57,7 +57,6 @@ Bash Coffee url (Available until the end of November): [http://10.34.112.130:300
             ├── Testpost.html
             └── README.md
 ```
----
 
 ---
 
@@ -181,7 +180,7 @@ We use Robot frameworks for Automated UI Testing.
 
 #### 🎯 Test Report
 
-![Test Report]()
+![Test Report](./project%20phase%202/automated%20test%20cases/AllTestReport.png)
 
 --------------
 
