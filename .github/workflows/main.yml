@@ -39,3 +39,32 @@ jobs:
           token: ${{ secrets.CODECOV_TOKEN }}
           files: ./project phase 2/BashCoffee-CompanyA-backend/coverage/lcov.info
 
+  robot-framework-tests:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.x'
+
+      - name: Install Dependencies
+        run: |
+          pip install robotframework
+          pip install robotframework-seleniumlibrary
+
+      - name: Run Robot Framework Tests
+        run: |
+          robot --output output.xml --log log.html --report report.html "./project phase 2/automated test cases"
+
+      - name: Upload Robot Framework Reports
+        uses: actions/upload-artifact@v3
+        with:
+          name: robot-reports
+          path: |
+            ./project phase 2/automated test cases/output.xml
+            ./project phase 2/automated test cases/log.html
+            ./project phase 2/automated test cases/report.html
