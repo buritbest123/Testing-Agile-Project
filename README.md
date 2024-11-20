@@ -1,6 +1,6 @@
 # **chickyShiningSparklingStar_CuteCute🤩❤️💫⭐**
 [![Run Jest Tests](https://github.com/beenayaknon/ITCS473-Project-Phase2-ChickyShiningSparklingStar_CuteCute/actions/workflows/main.yml/badge.svg)](https://github.com/beenayaknon/ITCS473-Project-Phase2-ChickyShiningSparklingStar_CuteCute/actions/workflows/main.yml)
-![Coverage](https://codecov.io/gh/<owner>/<repo>/branch/main/graph/badge.svg)
+![Coverage](https://codecov.io/gh/beenayaknon/ITCS473-Project-Phase2-ChickyShiningSparklingStar_CuteCute/branch/main/graph/badge.svg)
 
 ## **ITCS473 - Software Quality Assurance and Testing**
 ### **Mahidol University, ICT**
