@@ -48,14 +48,16 @@ Bash Coffee url (Available until the end of November): [http://10.34.112.130:300
         │   ├── member.js
         │   ├── memberController.js
         │   └── pointsController.js
-        └── Database promotion/
-            ├── exportRecords.js
-            ├── jest.config.js
-            ├── package-lock.json
-            ├── package.json
-            ├── server.js
-            ├── Testpost.html
-            └── README.md
+        │── Database promotion/
+        │   ├── promotion.js
+        │   └── promotionController.js
+        ├── exportRecords.js
+        ├── jest.config.js
+        ├── package-lock.json
+        ├── package.json
+        ├── server.js
+        ├── Testpost.html
+        └── README.md
 ```
 
 ---
