@@ -1,5 +1,6 @@
 # **chickyShiningSparklingStar_CuteCute🤩❤️💫⭐**
 [![Run Jest Tests](https://github.com/beenayaknon/ITCS473-Project-Phase2-ChickyShiningSparklingStar_CuteCute/actions/workflows/main.yml/badge.svg)](https://github.com/beenayaknon/ITCS473-Project-Phase2-ChickyShiningSparklingStar_CuteCute/actions/workflows/main.yml)
+![Coverage](https://codecov.io/gh/<owner>/<repo>/branch/main/graph/badge.svg)
 
 ## **ITCS473 - Software Quality Assurance and Testing**
 ### **Mahidol University, ICT**
@@ -34,11 +35,15 @@
 
 ## 💻 **Installation**
 
-1. **Clone the repository** or download the source code.
+**Clone the repository** or download the source code.
 
     ```bash
-    git clone https://github.com/rsrfay/bash-frontend.git
-    cd bash-frontend
+    git clone https://github.com/beenayaknon/ITCS473-Project-Phase2-ChickyShiningSparklingStar_CuteCute.git
+    ```
+
+1. **run Frontend**    
+    ```bash
+    cd "project phase 2\Bash-Frontend"
     ```
 
 2. **Install dependencies:**
@@ -51,6 +56,55 @@
 
     ```bash
     npm run dev
+    ```
+--------------------------------------
+
+1. **run Backend**
+    ```bash
+    cd "project phase 2\BashCoffee-CompanyA-backend"
+    ```
+
+2. **For Ubuntu: Open Windows PowerShell**
+    ```bash
+    ubuntu
+
+    ```
+
+    ```bash
+    ls
+    cd Bash
+    ls
+    cd BashCoffee-CompanyA-backend
+    ```
+
+    ```bash
+    sudo systemctl start mongod
+    /// enter your ubuntu password
+    ```
+
+    ```bash
+    node server.js
+    ```
+
+3. **For Windows: In the terminal**
+    ```bash
+    npm install
+    npm init -y
+    npm install express
+    npm install cors
+    npm install mongodb
+    npm install nodemon
+    ```
+
+4. **Run Server**
+    ```bash
+    npm start
+    ```
+
+- **For export CSV**
+    ```bash
+    npm install json2csv mongodb
+    npm install csv-writer
     ```
 
 ---
@@ -70,7 +124,7 @@ Please follow these setup:
 - **Method:** `testFile`
 - **Expected Result:** ...
 
-#### 🎯 Test Report
+#### 🎯 Coverage Report
 ![Coverage Report]("project phase 2\assets\Unit_Test_Report.jpg")
 
 --------------
