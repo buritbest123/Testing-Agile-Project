@@ -34,6 +34,33 @@ Bash Coffee url (Available until the end of November): [http://10.34.112.130:300
 
 ---
 
+```## 📁 **File Structure**
+```
+└── Project_Phase_2/
+    └── BashCoffee-CompanyA-backend/
+        ├── Database bakery/
+        │   ├── bakery.js
+        │   └── bakeryController.js
+        ├── Database beverage/
+        │   ├── beverage.js
+        │   └── beverageController.js
+        ├── Database member/
+        │   ├── member.js
+        │   ├── memberController.js
+        │   └── pointsController.js
+        └── Database promotion/
+            ├── exportRecords.js
+            ├── jest.config.js
+            ├── package-lock.json
+            ├── package.json
+            ├── server.js
+            ├── Testpost.html
+            └── README.md
+```
+---```
+
+---
+
 ## 💻 **Installation**
 
 **Clone the repository** or download the source code.
@@ -118,7 +145,7 @@ Please follow these setup:
 - **Expected Result:** ...
 
 #### 🎯 Coverage Report
-![Coverage Report]("project phase 2\assets\Unit_Test_Report.jpg")
+![Coverage Report](./project%20phase%202/assets/Unit_Test_Report.jpg)
 
 --------------
 
