@@ -117,7 +117,10 @@ Bash Coffee url (Available until the end of November): [http://10.34.112.130:300
     npm install json2csv mongodb
     npm install csv-writer
     ```
-
+- ** If want to export the CSV **
+    ```bash
+    node exportRecords.js
+    ```
 ---
 ## 🔍 **Unit Testing**
 
