@@ -42,6 +42,7 @@
     ```
 
 1. **run Frontend**    
+
     ```bash
     cd "project phase 2\Bash-Frontend"
     ```
@@ -152,6 +153,7 @@ Please follow these setup:
 --------------
 
 ## 🔍 **System Test**
+- Please see the documentation [System Test Documentation]("project phase 2\manual test cases\ManualTeat_chicky.pdf")
 
 --------------
 
