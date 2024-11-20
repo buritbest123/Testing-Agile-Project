@@ -1,0 +1,126 @@
+{
+	"info": {
+		"_postman_id": "a0a79296-5a19-4b7c-a95f-352bf21f1285",
+		"name": "promotion",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26746028"
+	},
+	"item": [
+		{
+			"name": "Retrieve Promotions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3030/promotions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3030",
+					"path": [
+						"promotions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve Promotion by Pro_ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3030/promotions/004",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3030",
+					"path": [
+						"promotions",
+						"004"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Promotion",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"Pro_ID\": \"004\",\r\n  \"Promo_Description\": \"สะสมแต้มผ่าน LINE OA 10 แก้ว ฟรี 1 แก้ว\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3030/promotions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3030",
+					"path": [
+						"promotions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Promotion by Pro_ID",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"Pro_ID\": \"004\",\r\n  \"Promo_Description\": \"Updated description: ลด 50% สำหรับแก้วที่ 2 ทุกวันศุกร์ เวลา 13:00-16:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3030/promotions/004",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3030",
+					"path": [
+						"promotions",
+						"004"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Promotion by Pro_ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3030/promotions/004",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3030",
+					"path": [
+						"promotions",
+						"004"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
