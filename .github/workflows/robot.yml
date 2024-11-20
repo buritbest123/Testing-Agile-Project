@@ -1,0 +1,57 @@
+name: Robot Framework UI Tests
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - '**/*.md'
+  pull_request:
+    branches:
+      - main
+    paths-ignore:
+      - '**/*.md'
+
+jobs:
+  robot-tests:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./project\ phase\ 2/automated\ test\ cases
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y xvfb fluxbox
+        python -m pip install --upgrade pip
+        pip install robotframework robotframework-seleniumlibrary
+
+    - name: Run Robot Framework tests
+      run: |
+        xvfb-run robot TestAddCart_1.robot
+        xvfb-run robot TestAddCart_2.robot
+        xvfb-run robot TestAddCart_3.robot
+        xvfb-run robot TestFilterBakery.robot
+        xvfb-run robot TestFilterCoffee.robot
+        xvfb-run robot TestFilterMatcha.robot
+        xvfb-run robot TestSearch_1.robot
+        xvfb-run robot TestSearch_2.robot
+        xvfb-run robot TestSearch_3.robot
+
+    - name: Upload Robot Framework Reports
+      uses: actions/upload-artifact@v3
+      with:
+        name: robot-reports
+        path: |
+          ./output.xml
+          ./log.html
+          ./report.html
