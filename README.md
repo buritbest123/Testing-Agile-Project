@@ -127,19 +127,69 @@ Bash Coffee url (Available until the end of November): [http://10.34.112.130:300
 ## 🔍 **Unit Testing**
 
 ### Test Environment Setup
-Please follow these setup:
-- 
+To set up the unit testing environment for **BashCoffee-CompanyA-backend**, follow these steps:
+
+1. Ensure **Node.js** and **npm** are installed on your system.
+2. Navigate to the backend directory:
+   ```bash
+   cd "project phase 2\BashCoffee-CompanyA-backend"
+   ```
+3. Install dependencies:
+   ```bash   
+   npm install --save-dev jest
+   ```
 
 ### Running the Tests
- ```bash
- npx jest
- ```
+To execute the unit tests, run the following command in the terminal:
+```bash
+npx jest
+```
 
 ### 📝 Test Cases Summary
+This project utilizes **Jest** for unit testing. The following modules have been tested:
+
+### 🎯 Coverage Report
 ![Coverage Report](./project%20phase%202/assets/Unit_Test_CoverageReport.jpg)
 
-#### 🎯 Coverage Report
+#### 📊 Test Output in Terminal
 ![Coverage Report in Terminal](./project%20phase%202/assets/Unit_Test_Report.jpg)
+
+- **Database beverage**
+  - Coverage: 100% statements, 100% branches, 100% functions, 100% lines
+- **Database member**
+  - Coverage: 95.65% statements, 90.9% branches, 100% functions, 95.65% lines
+- **Database promotion**
+  - Coverage: 100% statements, 100% branches, 100% functions, 100% lines
+
+### Coverage Highlights
+- **Statements Covered:** 98.46%
+- **Branches Covered:** 96.77%
+- **Functions Covered:** 100%
+- **Lines Covered:** 98.38%
+
+### Module Details
+#### Database Beverage
+- **Covered Features:**
+  - Fetching all beverages with filters (e.g., name and type)
+  - Throwing errors for invalid criteria or empty results
+  - Retrieving beverages with image URLs
+
+#### Database Member
+- **Covered Features:**
+  - Adding points to a member's account
+  - Redeeming points and handling constraints
+  - Managing member data
+
+#### Database Promotion
+- **Covered Features:**
+  - Fetching all promotions or by `Pro_ID`
+  - Adding new promotions with validation
+  - Updating promotions
+  - Deleting promotions with error handling for invalid IDs
+
+### 💡 Notes
+- Ensure MongoDB is running before executing the tests.
+- Coverage reports and test results will be available in the terminal or coverage report files after running the tests.
 
 --------------
 
