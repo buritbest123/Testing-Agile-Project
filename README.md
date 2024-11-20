@@ -1,1 +1,0 @@
-# ITCS473-Project-Phase2-ChickyShiningSparklingStar_CuteCute
