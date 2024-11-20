@@ -1,6 +1,6 @@
 # **chickyShiningSparklingStar_CuteCute🤩❤️💫⭐**
 [![Run Jest Tests](https://github.com/beenayaknon/ITCS473-Project-Phase2-ChickyShiningSparklingStar_CuteCute/actions/workflows/main.yml/badge.svg)](https://github.com/beenayaknon/ITCS473-Project-Phase2-ChickyShiningSparklingStar_CuteCute/actions/workflows/main.yml)
-![Coverage](https://codecov.io/gh/<owner>/<repo>/branch/main/graph/badge.svg)
+![Coverage](https://codecov.io/gh/beenayaknon/ITCS473-Project-Phase2-ChickyShiningSparklingStar_CuteCute/branch/main/graph/badge.svg)
 
 ## **ITCS473 - Software Quality Assurance and Testing**
 ### **Mahidol University, ICT**
@@ -8,6 +8,7 @@
 ---
 
 ## ☕️ **Bash Coffee Project**
+Bash Coffee url (Available until the end of November): [http://10.34.112.130:3000/](http://10.34.112.130:3000/) (Access using Mahidol Wifi only)
 
 **Bash Coffee Website** aims to provide a convenient and friendly experience for ordering, managing, and interacting with the coffee shop's services.
 
@@ -153,7 +154,7 @@ Please follow these setup:
 --------------
 
 ## 🔍 **System Test**
-- Please see the documentation [System Test Documentation]("project phase 2\manual test cases\ManualTeat_chicky.pdf")
+- Please see the documentation [![System Test Documentation]("project phase 2\manual test cases\ManualTeat_chicky.pdf")]
 
 --------------
 
