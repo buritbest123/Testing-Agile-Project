@@ -38,9 +38,7 @@ Bash Coffee url (Available until the end of November): [http://10.34.112.130:300
 
 **Clone the repository** or download the source code.
 
-    ```bash
     git clone https://github.com/beenayaknon/ITCS473-Project-Phase2-ChickyShiningSparklingStar_CuteCute.git
-    ```
 
 1. **run Frontend**    
 
@@ -131,6 +129,10 @@ Please follow these setup:
 --------------
 
 ## 🔍 **Automated UI Testing**
+
+We use Robot frameworks for Automated UI Testing.
+    
+    robot --output output.xml --log log.html --report report.html TestAddCart_1.robot TestAddCart_2.robot TestAddCart_3.robot TestFilterBakery.robot TestFilterCoffee.robot TestFilterMatcha.robot TestSearch_1.robot TestSearch_2.robot TestSearch_3.robot
 
 ### Test Environment Setup
 ...
