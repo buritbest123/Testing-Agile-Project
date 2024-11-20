@@ -90,30 +90,22 @@ Bash Coffee url (Available until the end of November): [http://10.34.112.130:300
 #. **For MacOs or Linux Distribution**
 
     cd into backend
-    ```bash
     cd "project phase 2\BashCoffee-CompanyA-backend"
-    ```
-    if system did not have MongoDB. please follow this [step](https://www.mongodb.com/docs/mongodb-shell/install/)
+    // if system did not have MongoDB. please follow this [step](https://www.mongodb.com/docs/mongodb-shell/install/)
    
-    start MongoDB service
-    ```bash
+    // start MongoDB service
     sudo systemctl start mongod
-    ```
 
-    Start node
-    ```bash
+    // Start node
     node server.js
-    ```
 
 # **For Windows: In the terminal**
-    ```bash
     npm install
     npm init -y
     npm install express
     npm install cors
     npm install mongodb
     npm install nodemon
-    ```
 
 4. **Run Server**
     ```bash
