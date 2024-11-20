@@ -1,0 +1,150 @@
+.cartItemContainer {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  width: 100%;
+  background-color: #fafafa;
+  border: 2px solid rgba(103, 70, 54, 0.3);
+  border-radius: 16px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  justify-content: space-between;
+}
+
+.cartItemContainer:hover {
+  background-color: #e2e0e0;
+}
+
+.imagePlaceholder {
+  width: 100px;
+  height: 100px;
+  background-color: rgba(224, 224, 224, 0.5);
+  border-radius: 8px;
+  margin-right: 40px;
+  flex-shrink: 0;
+}
+
+.itemInfo {
+  flex-grow: 1;
+  margin-right: 20px;
+}
+
+.itemName {
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.description {
+  font-size: 15px;
+  color: #757575;
+  margin-bottom: 4px;
+}
+
+.quantityControl {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.decrementButton,
+.incrementButton {
+  width: 32px;
+  height: 32px;
+  border: 2px solid #674636;
+  cursor: pointer;
+  border-radius: 30px;
+}
+
+.quantity {
+  font-size: 16px;
+}
+
+.itemPrice {
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  text-align: right;
+  margin-right: 60px;
+}
+
+.deleteButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 16px;
+  font-size: 20px;
+}
+
+.trashIcon {
+  color: #a87f5a;
+  cursor: pointer;
+  width: 150%;
+  height: 100%;
+}
+
+/* Mobile Styles */
+@media (max-width: 780px) {
+  .cartItemContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding-top: 80px;
+    margin: 80px auto 20px;
+    max-width: 300px;
+  }
+
+  .imagePlaceholder {
+    position: absolute;
+    background-color: transparent;
+    top: -60px;
+    width: 150px;
+    height: 150px;
+    margin: 0;
+  }
+
+  .imagePlaceholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .itemInfo {
+    width: 100%;
+    margin-right: 0;
+    text-align: center;
+  }
+
+  .itemName {
+    text-align: center;
+  }
+
+  .description {
+    text-align: center;
+  }
+
+  .itemPrice {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 15px 0 0 0;
+  }
+
+  .quantityControl {
+    margin-top: 15px;
+    justify-content: center;
+  }
+
+  .trashIcon {
+    margin: 0 auto;
+  }
+
+  .removeButton {
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+  }
+}

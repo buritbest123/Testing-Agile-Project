@@ -1,0 +1,250 @@
+{
+	"info": {
+		"_postman_id": "e45cb1d6-bf89-4c95-984a-5fdb0c1a135a",
+		"name": "Member (Points)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26746028"
+	},
+	"item": [
+		{
+			"name": "Add Points Successfully",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"MID\": 3,\r\n  \"points\": 50\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3030/member/add-points",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3030",
+					"path": [
+						"member",
+						"add-points"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Redeem Points Successfully",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"MID\": 0,\r\n  \"points\": 50\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3030/member/redeem-points",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3030",
+					"path": [
+						"member",
+						"redeem-points"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Insufficient Points",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"MID\": 1,\r\n  \"points\": 50\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3030/member/redeem-points",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3030",
+					"path": [
+						"member",
+						"redeem-points"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Non-existent Member",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"MID\": 4,\r\n  \"points\": 50\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3030/member/redeem-points",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3030",
+					"path": [
+						"member",
+						"redeem-points"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Invalid Points Value",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"MID\": 1,\r\n  \"points\": -50\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3030/member/redeem-points",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3030",
+					"path": [
+						"member",
+						"redeem-points"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Points Failed (0 points)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"MID\": 3,\r\n  \"points\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3030/member/add-points",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3030",
+					"path": [
+						"member",
+						"add-points"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Points Failed (-points)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"MID\": 3,\r\n  \"points\": -50\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3030/member/add-points",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3030",
+					"path": [
+						"member",
+						"add-points"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Points Failed (Invalid MID)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"MID\": 4,\r\n  \"points\": 50\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3030/member/add-points",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3030",
+					"path": [
+						"member",
+						"add-points"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get members",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

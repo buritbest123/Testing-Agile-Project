@@ -1,0 +1,461 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-y: auto;
+  padding-bottom: 230px;
+}
+
+.backButtonContainer {
+  padding: 80px 100px 0 50px;
+}
+
+.miscContainer {
+  padding: 0px 100px 0 100px;
+  flex-grow: 1;
+}
+
+.myCart {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.useOffers {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 30px 0px 0px 0px;
+}
+
+.itemContainer {
+  padding: 20px 100px 0 100px;
+}
+
+.promotionsContainer {
+  padding: 20px 100px;
+}
+
+.membershipInputContainer {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.membershipLabel {
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.membershipInput {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  color: #666;
+}
+
+.checkMembershipButton {
+  padding: 10px 12px;
+  border: none;
+  border-radius: 10px;
+  background-color: #674636;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.checkMembershipButton:hover {
+  background-color: #7d5542;
+}
+
+.membershipScore {
+  font-size: 16px;
+  font-weight: bold;
+  color: #a8865e;
+  flex-shrink: 0;
+  margin-left: 10px;
+}
+
+.membershipInvalid {
+  color: #dc2626;
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+.promotions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.offerIcon {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 8px;
+  font-size: 20px;
+}
+
+.promotionContent {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.promotionIcon {
+  font-size: 20px;
+  color: #674636;
+}
+
+.checkIcon {
+  color: #674636;
+  transition: opacity 0.2s ease;
+}
+
+.promotionButton {
+  flex-grow: 1;
+  padding: 15px;
+  background-color: #d0c4b1;
+  border: 4px solid transparent;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  /* Added to ensure the button isn't actually disabled when clickable */
+  opacity: 1;
+}
+
+.promotionButton:not(.disabled) {
+  cursor: pointer;
+}
+
+.promotionButton span {
+  flex: 1;
+  text-align: left;
+  margin: 0 10px;
+}
+
+.promotionButton:hover:not(.disabled) {
+  background-color: #c4b7a3;
+}
+
+.promotionButton.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: #e5e5e5;
+  pointer-events: none;
+}
+
+.pointsIndicator {
+  font-size: 14px;
+  color: #674636;
+  margin-left: 8px;
+}
+
+.promotionButton.selected {
+  background-color: #b8aa94;
+  border-color: #674636;
+}
+
+.selected .checkIcon {
+  opacity: 1;
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: #e5e5e5;
+}
+
+.disabled .promotionIcon,
+.disabled .checkIcon {
+  opacity: 0.5;
+}
+
+.paymentIcon {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+  font-size: 24px;
+}
+
+.checkIcon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.totalSummary {
+  padding: 20px 100px;
+  border-top: 1px solid #eee;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.totalRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.totalLabel {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.totalAmount {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.totalDiscount {
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.totalAmountDiscount {
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  background-color: white;
+  text-align: center;
+  padding: 30px;
+  box-shadow: 0 -5px 21px rgba(0, 0, 0, 0.2);
+}
+
+.totalContainer {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 50px;
+  padding: 0px 0 10px 0;
+}
+
+.totalContainer p {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.nextButton {
+  background-color: #674636;
+  border-radius: 50px;
+  padding: 15px;
+  width: 95%;
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.nextButton:hover:not(:disabled) {
+  background-color: #7d5542;
+}
+
+.nextButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 780px) {
+  .main {
+    padding-bottom: 180px;
+  }
+
+  .backButtonContainer {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 5px;
+    width: 100%;
+    padding-left: 10px;
+  }
+
+  .miscContainer {
+    padding: 10px 50px 0 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .myCart {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .itemContainer {
+    padding: 20px 50px 0 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .useOffers {
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .offerIcon {
+    font-size: 20px;
+  }
+
+  .promotionsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .membershipInputContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .membershipLabel {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+
+  .membershipInput {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+
+  .checkMembershipButton {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #674636;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .checkMembershipButton:hover {
+    background-color: #5a3d2e;
+  }
+
+  .membershipScore,
+  .membershipInvalid {
+    font-size: 14px;
+    margin-top: 5px;
+  }
+
+  .promotions {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .promotionButton {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+  }
+
+  .promotionContent {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-align: center;
+  }
+
+  .promotionIcon {
+    font-size: 18px;
+  }
+
+  .pointsIndicator {
+    font-size: 12px;
+    margin-left: 5px;
+  }
+
+  .totalSummary {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+  }
+
+  .totalRow {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  .totalLabel,
+  .totalDiscount {
+    font-size: 16px;
+  }
+
+  .totalAmount,
+  .totalAmountDiscount {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    background-color: white;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 -3px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .totalContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 10px auto;
+  }
+
+  .totalContainer p {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .QRCodeModal {
+    width: 100%;
+    padding: 10px;
+  }
+}

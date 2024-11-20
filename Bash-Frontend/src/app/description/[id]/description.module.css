@@ -1,0 +1,299 @@
+.description-page { 
+  padding: 3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bakery-image{
+  position: absolute;
+  top: -13%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 23%; 
+  height: auto;
+  z-index: 1;
+}
+
+.product-image {
+  position: absolute;
+  top: -10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 25%; 
+  height: auto;
+  z-index: 1;
+}
+
+.product-details {
+  position: relative;
+  background-color: white;
+  border-radius: 12px;
+  padding: 30px; 
+  width: 70%; 
+  max-width: 600px; 
+  min-height: 60%;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  margin: 5% auto;
+  overflow: visible;
+}
+
+.product-description {
+  font-size: 14px;
+  color: #674636;
+  margin-bottom: 20px;
+}
+
+.options h2 {
+  font-size: 15px;
+  color: #674636;
+  margin-bottom: 10px;
+  font-weight: 800;
+}
+
+.option-group {
+  font-size: 14px;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.option {
+  background-color: #f9f9f9;
+  color: #674636;
+  border: 1px solid #674636;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.option:hover {
+  background-color: #fbeee0;
+}
+
+.option.selected {
+  background-color: #674636;
+  color: white;
+}
+
+.price h3 {
+  font-size: 15px;
+  color: #674636;
+  margin-bottom: 20px;
+  text-align: right;
+}
+
+.add-to-cart {
+  background-color: #674636;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 30px;
+  font-size: 14px;
+  cursor: pointer;
+  display: block;
+  margin: 20px auto;
+  width: 50%; /* Larger button width */
+}
+
+.add-to-cart:hover {
+  background-color: #543428;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px 30px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.modal-content p {
+  font-size: 18px;
+  color: #674636;
+  margin-bottom: 20px;
+}
+
+.modal-content button {
+  background-color: #543428;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #ffffff;
+  padding: 20px 30px;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 90%;
+  width: 350px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+  font-family: Arial, sans-serif;
+  animation: fadeIn 0.3s ease; 
+}
+
+.modal-content.success {
+  border: 2px solid #674636; 
+  color: #674636; 
+}
+
+.modal-content.success p {
+  font-weight: 600;
+  font-size: 18px;
+  color: #674636; /* Same as the return button color */
+}
+
+.modal-content.success button {
+  background-color: #fbeee0;
+  color: #674636;
+  font-weight: 600;
+  padding: 10px 20px;
+  border: 2px solid #674636;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 15px;
+  box-shadow: #674636 4px 4px 0 0;
+}
+
+.modal-content.success button:hover {
+  background-color: #674636;
+  color: #fbeee0;
+}
+
+.modal-content.success button:active {
+  box-shadow: #422800 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
+
+.modal-content.failure {
+  border: 2px solid #90242f; /* Red border for failure */
+  color: #90242f;
+}
+
+.modal-content.failure p {
+  font-weight: 600;
+  font-size: 18px;
+  color: #90242f;
+}
+
+.modal-content.failure button {
+  background-color: #ffe5e5;
+  color: #90242f;
+  font-weight: 600;
+  padding: 10px 20px;
+  border: 2px solid #90242f;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 15px;
+  box-shadow: #90242f 4px 4px 0 0;
+}
+
+.modal-content.failure button:hover {
+  background-color: #90242f;
+  color: #ffe5e5;
+}
+
+.modal-content.failure button:active {
+  box-shadow: #b02a37 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .product-details {
+    padding: 20px;
+    width: 90%;
+    max-width: 400px; 
+    min-height: 70%; 
+    text-align: left; 
+  }
+
+  .add-to-cart {
+    width: 80%;
+    padding: 10px;
+    margin: 20px auto;
+  }
+
+  .product-image {
+    top: -7%;
+    width: 30%;
+  }
+
+}
+
+@media screen and (min-width: 768px) {
+  .product-details {
+    padding: 40px;
+    max-width: 600px;
+    min-height: 60%;
+  }
+
+  .product-image {
+    top: -10%;
+    width: 25%;
+  }
+
+  .option-group {
+    justify-content: left; 
+  }
+
+  .add-to-cart {
+    width: 60%;
+  }
+
+  .modal-content {
+    width: 400px;
+    padding: 30px 40px;
+  }
+
+  .modal-content p {
+    font-size: 20px;
+  }
+
+  .modal-content button {
+    padding: 12px 25px;
+  }
+
+}
+
+

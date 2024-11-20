@@ -1,0 +1,133 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-y: auto;
+  padding-bottom: 230px;
+}
+
+.miscContainer {
+  padding: 120px 100px 0 100px;
+}
+
+.itemContainer {
+  padding: 40px 100px 0 100px;
+}
+
+.backButtonContainer p {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.miscContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.miscContainer p.myCart {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.miscContainer button.cancelButton,
+.miscContainer button.cancelButtonActive {
+  padding: 3px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #674636;
+  background: none;
+  border-color: #674636;
+  border-width: 3px;
+  border-radius: 32px;
+}
+
+.miscContainer button.cancelButtonActive {
+  background-color: #674636;
+  color: white;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  background-color: white;
+  text-align: center;
+  padding: 30px;
+  box-shadow: 0 -5px 21px rgba(0, 0, 0, 0.2);
+}
+
+.footer .totalContainer {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 50px;
+  padding: 0px 0 10px 0;
+}
+
+.totalContainer p {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.footer .nextButton {
+  background-color: #674636;
+  border-radius: 50px;
+  padding: 15px;
+  width: 95%;
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+@media (max-width: 780px) {
+  .main {
+    padding-bottom: 180px;
+  }
+
+  .miscContainer {
+    padding: 120px 50px 0 50px;
+  }
+
+  .miscContainer button.cancelButton,
+  .miscContainer button.cancelButtonActive {
+    font-size: 15px;
+    font-weight: bold;
+    color: #674636;
+    background: none;
+    border-color: #674636;
+    border-width: 3px;
+    border-radius: 20px;
+  }
+
+  .itemContainer {
+    padding: 20px 50px 0 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    background-color: white;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 -3px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .totalContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 10px auto;
+  }
+
+  .totalContainer p {
+    font-size: 18px;
+    font-weight: bold;
+  }
+}

@@ -1,0 +1,43 @@
+/* some css from: https://getcssscan.com/css-buttons-examples */
+.returnButton {
+  color: #674636;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  font-weight: 600;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  transition: all 0.2s ease;
+  padding: 10px 20px;
+}
+
+.returnButton:hover {
+  background-color: #fbeee0;
+  border: 2px solid #674636;
+  border-radius: 30px;
+  box-shadow: #674636 4px 4px 0 0;
+  padding: 13px 25px;
+}
+
+.returnButton:active {
+  box-shadow: #422800 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
+
+.iconText {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+@media (min-width: 768px) {
+  .returnButton {
+    min-width: 120px;
+    padding: 10px 25px;
+    font-size: 18px;
+  }
+}

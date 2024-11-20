@@ -1,0 +1,79 @@
+/* Main container for the navbar */
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 15px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+
+/* Logo styling */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+/* Navigation links for larger screens */
+.navLinks {
+  display: flex;
+  list-style: none;
+  margin: 0;
+}
+
+.navLinks li {
+  margin: 0 10px; /* Reduced spacing between links */
+}
+
+.navLinks a {
+  color: #5c4033;
+  font-size: 14px; /* Reduced font size */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navLinks a:hover {
+  color: #b6a401;
+}
+
+/* Hide hamburger menu on larger screens */
+.menuIcon {
+  display: none;
+}
+
+/* Media query for mobile phones (max width 768px) */
+@media (max-width: 768px) {
+  .navLinks {
+    display: none; /* Hide the links on small screens */
+    flex-direction: column; /* Stack links vertically */
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: white;
+    width: 100%;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1001;
+  }
+
+  .navLinks.open {
+    display: flex; /* Show the links when the menu is open */
+  }
+
+  .menuIcon {
+    display: block; /* Show the menu icon on small screens */
+    cursor: pointer;
+    font-size: 24px;
+    color: #5c4033;
+  }
+
+  .brandName {
+    font-size: 16px; /* Further reduced font size on small screens */
+  }
+}
