@@ -34,7 +34,7 @@ Bash Coffee url (Available until the end of November): [http://10.34.112.130:300
 
 ---
 
-```## 📁 **File Structure**
+## 📁 **File Structure**
 ```
 └── Project_Phase_2/
     └── BashCoffee-CompanyA-backend/
@@ -57,7 +57,7 @@ Bash Coffee url (Available until the end of November): [http://10.34.112.130:300
             ├── Testpost.html
             └── README.md
 ```
----```
+---
 
 ---
 
