@@ -2,9 +2,10 @@ module.exports = {
     collectCoverage: true,
     coverageDirectory: "coverage",
     collectCoverageFrom: [
-        "**/*Controller.js",        // Includes all files ending with Controller.js in all directories
-        "!**/node_modules/**",      // Excludes files in node_modules
-        "!**/tests/**",             // Excludes files in tests directory
+        "**/beverageController.js",  // Include specific controller
+        "**/memberController.js",    // Include specific controller
+        "**/promotionController.js", // Include specific controller
+        "!**/node_modules/**",       // Exclude files in node_modules
+        "!**/tests/**",              // Exclude files in the tests directory
     ],
-  };
-  
+};
