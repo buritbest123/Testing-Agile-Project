@@ -125,17 +125,27 @@ Please follow these setup:
 ## 🔍 **Automated UI Testing**
 
 We use Robot frameworks for Automated UI Testing.
+### Running the Tests
     
     robot --output output.xml --log log.html --report report.html TestAddCart_1.robot TestAddCart_2.robot TestAddCart_3.robot TestFilterBakery.robot TestFilterCoffee.robot TestFilterMatcha.robot TestSearch_1.robot TestSearch_2.robot TestSearch_3.robot
 
-### Test Environment Setup
-...
-
-### Running the Tests
-...
 
 ### 📝 Test Cases Summary
 
+- Test Filter Function
+
+- Test Search Function
+    Check whether the function returns search results with names that contain the input keyword or not. The test actions are as follows:
+  - Search Matcha
+  - Search banana
+  - Search กาแฟ
+
+- Test Add Item To Cart
+    Check Add Item To Cart Function can search, select item, selecting Type, Add-Ons, and Sweetness, and add item to cart successfully and navigate back to Homepage. The test actions are as follows:
+  - Add Caramel Fresh Milk, select cool type/Oat milk add-on/sweetness 50%.
+  - Add Orange Matcha, select cool type/sweetness 75%, with adding Donut to cart.
+  - Add Cream Cheese Danish to cart.
+    
 #### 1. User Registration Test
 **Purpose:** 
 
