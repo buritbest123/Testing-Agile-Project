@@ -61,17 +61,16 @@ Bash Coffee url (Available until the end of November): [http://10.34.112.130:300
     ```
 --------------------------------------
 
+
+
+if. **using window: please install [wsl](https://learn.microsoft.com/en-us/windows/wsl/install) you can skip this part if using MacOs or Linux Distribution**
+    ```bash
+        ubuntu
+    ```
 1. **run Backend**
     ```bash
     cd "project phase 2\BashCoffee-CompanyA-backend"
     ```
-
-2. **For Ubuntu: Open Windows PowerShell**
-    ```bash
-    ubuntu
-
-    ```
-
     ```bash
     ls
     cd Bash
