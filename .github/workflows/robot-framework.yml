@@ -1,48 +1,50 @@
-name: Robot Framework CI
+name: Robot Framework UI Tests
 
 on:
   push:
     branches:
       - master
+      
   pull_request:
-  workflow_dispatch:
+    branches:
+      - master
 
 jobs:
-  Run-Test:
-    runs-on: ubuntu-20.04
+  robot-test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./Project_phase_2/
+
     steps:
-      # Step 1: Checkout the repository
-      - name: Checkout repository
-        uses: actions/checkout@v3
+    - name: Checkout repository
+      uses: actions/checkout@v3
 
-      # Step 2: Cache pip dependencies
-      - name: Cache pip dependencies
-        uses: actions/cache@v2
-        id: cache
-        with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
 
-      # Step 3: Install pip dependencies
-      - name: Install pip dependencies
-        run: |
-          pip install --upgrade pip
-          pip install robotframework
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y xvfb fluxbox
+        python -m pip install --upgrade pip
+        pip install robotframework robotframework-seleniumlibrary
 
-      # Step 4: Run Robot Framework tests
-      - name: Run Automated UI Tests
-        run: |
-          mkdir -p results
-          robot --outputdir results "E:\Editor\Project\QA\Project\ITCS473-Project-Phase2-ChickyShiningSparklingStar_CuteCute\project phase 2\automated test cases"
+    - name: Start Xvfb and Fluxbox
+      run: |
+        export DISPLAY=:99
+        Xvfb :99 -screen 0 1920x1080x24 > /dev/null 2>&1 &
+        fluxbox &
 
-      # Step 5: Upload test results using the updated action
-      - name: Upload Test Results
-        uses: actions/upload-artifact@v3
-        with:
-          name: robot-test-results
-          path: results
+    - name: Run Robot Framework tests
+      run: |
+        cd "project phase 2/automated test cases"
+        robot TestAddCart_1.robot TestAddCart_2.robot TestAddCart_3.robot TestFilterBakery.robot TestFilterCoffee.robot TestFilterMatcha.robot TestSearch_1.robot TestSearch_2.robot TestSearch_3.robot
 
-      # Step 6: Generate and Publish Report
-      - name: Generate and Publish Report
-        run: |
-          robot --outputdir results --report results/report.html --log results/log.html "E:\Editor\Project\QA\Project\ITCS473-Project-Phase2-ChickyShiningSparklingStar_CuteCute\project phase 2\automated test cases"
+    - name: Upload Test Results
+      uses: actions/upload-artifact@v3
+      with:
+        name: robot-test-results
+        path: "project phase 2/automated test cases/*.html"
