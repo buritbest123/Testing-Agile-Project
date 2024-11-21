@@ -35,14 +35,14 @@ jobs:
           mkdir -p results
           robot --outputdir results "E:\Editor\Project\QA\Project\ITCS473-Project-Phase2-ChickyShiningSparklingStar_CuteCute\project phase 2\automated test cases"
 
-      # Step 5: Upload test results
+      # Step 5: Upload test results using the updated action
       - name: Upload Test Results
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: robot-test-results
           path: results
 
-      # Step 6: Publish report as a workflow artifact
+      # Step 6: Generate and Publish Report
       - name: Generate and Publish Report
         run: |
           robot --outputdir results --report results/report.html --log results/log.html "E:\Editor\Project\QA\Project\ITCS473-Project-Phase2-ChickyShiningSparklingStar_CuteCute\project phase 2\automated test cases"
