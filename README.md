@@ -152,12 +152,13 @@ This project utilizes **Jest** for unit testing. The following modules have been
 ![Coverage Report](./project%20phase%202/assets/Unit_Test_CoverageReport.jpg)
 
 #### 📊 Test Output in Terminal
-![Coverage Report in Terminal](./project%20phase%202/assets/Unit_Test_Report.jpg)
+![Coverage Report in Terminal](https://github.com/user-attachments/assets/a261c747-7bcb-4fd1-8ca4-459d8e99fcfa)
+
 
 - **Database beverage**
   - Coverage: 100% statements, 100% branches, 100% functions, 100% lines
 - **Database member**
-  - Coverage: 95.65% statements, 90.9% branches, 100% functions, 95.65% lines
+  - Coverage: 95.23% statements, 90.9% branches, 100% functions, 95.23% lines
 - **Database promotion**
   - Coverage: 100% statements, 100% branches, 100% functions, 100% lines
 
