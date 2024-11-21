@@ -76,5 +76,5 @@ jobs:
 
       - name: Run Robot Framework tests
         run: |
-          cd "project phase 2/automated test cases"
+          cd "automated test cases"
           robot TestAddCart_1.robot TestAddCart_2.robot TestAddCart_3.robot TestFilterBakery.robot TestFilterCoffee.robot TestFilterMatcha.robot TestSearch_1.robot TestSearch_2.robot TestSearch_3.robot
