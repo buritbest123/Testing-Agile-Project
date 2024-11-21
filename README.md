@@ -147,6 +147,12 @@ npx jest
 
 ### 📝 Test Cases Summary
 This project utilizes **Jest** for unit testing. The following modules have been tested:
+1. **Database beverage**
+  - Coverage: 100% statements, 100% branches, 100% functions, 100% lines
+2. **Database member**
+  - Coverage: 95.23% statements, 90.9% branches, 100% functions, 95.23% lines
+3. **Database promotion**
+  - Coverage: 100% statements, 100% branches, 100% functions, 100% lines
 
 ### 🎯 Coverage Report
 ![Coverage Report](./project%20phase%202/assets/Unit_Test_CoverageReport.jpg)
@@ -154,34 +160,26 @@ This project utilizes **Jest** for unit testing. The following modules have been
 #### 📊 Test Output in Terminal
 ![Coverage Report in Terminal](https://github.com/user-attachments/assets/a261c747-7bcb-4fd1-8ca4-459d8e99fcfa)
 
-
-- **Database beverage**
-  - Coverage: 100% statements, 100% branches, 100% functions, 100% lines
-- **Database member**
-  - Coverage: 95.23% statements, 90.9% branches, 100% functions, 95.23% lines
-- **Database promotion**
-  - Coverage: 100% statements, 100% branches, 100% functions, 100% lines
-
 ### Coverage Highlights
-- **Statements Covered:** 98.46%
+- **Statements Covered:** 98.41%
 - **Branches Covered:** 96.77%
 - **Functions Covered:** 100%
-- **Lines Covered:** 98.38%
+- **Lines Covered:** 98.33%
 
 ### Module Details
-#### Database Beverage
+#### 1. Database Beverage
 - **Covered Features:**
   - Fetching all beverages with filters (e.g., name and type)
   - Throwing errors for invalid criteria or empty results
   - Retrieving beverages with image URLs
 
-#### Database Member
+#### 2. Database Member
 - **Covered Features:**
   - Adding points to a member's account
   - Redeeming points and handling constraints
   - Managing member data
 
-#### Database Promotion
+#### 3. Database Promotion
 - **Covered Features:**
   - Fetching all promotions or by `Pro_ID`
   - Adding new promotions with validation
