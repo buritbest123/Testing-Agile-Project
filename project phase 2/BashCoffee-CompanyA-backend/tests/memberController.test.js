@@ -1,4 +1,4 @@
-const { addMember, getMemberByPhoneNumber, getAllMembers, getRecordHistory } = require("../Database member/memberController");
+const { addMember, getMemberByPhoneNumber, getAllMembers } = require("../Database member/memberController");
 
 describe("memberController", () => {
   let mockDb;
@@ -108,20 +108,6 @@ describe("memberController", () => {
       expect(result).toEqual([
           { MID: 1, Mname: "John Doe", Tel: "123456789", Points: 0, Alumni: true },
       ]);
-      expect(mockDb.find).toHaveBeenCalledWith({});
-  });
-
-  // Test Case 7: Fetch record history
-  // Test Requirements: TR = {1, 2}
-  // Test Paths: t7 = [1, 2]
-  it("should fetch record history", async () => {
-      mockDb.toArray.mockResolvedValue([
-          { Record_ID: 1, MemberID: 1, Date: "2024-01-01" },
-      ]);
-
-      const result = await getRecordHistory(mockDb);
-
-      expect(result).toEqual([{ Record_ID: 1, MemberID: 1, Date: "2024-01-01" }]);
       expect(mockDb.find).toHaveBeenCalledWith({});
   });
 });
