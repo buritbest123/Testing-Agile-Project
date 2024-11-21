@@ -40,42 +40,38 @@ jobs:
           files: ./project phase 2/BashCoffee-CompanyA-backend/coverage/lcov.info
 
   robot-ui-tests:
-      name: Run Robot Framework UI Tests
-      runs-on: ubuntu-latest
-  
-      defaults:
-        run:
-          working-directory: ./project\ phase\ 2/automated\ test\ cases/
-  
-      steps:
-        - name: Checkout repository
-          uses: actions/checkout@v3
-  
-        - name: Set up Python
-          uses: actions/setup-python@v4
-          with:
-            python-version: '3.10'
-  
-        - name: Install Dependencies
-          run: |
-            sudo apt-get update
-            sudo apt-get install -y xvfb fluxbox
-            python -m pip install --upgrade pip
-            pip install robotframework robotframework-seleniumlibrary
-  
-        - name: Start Xvfb and Fluxbox
-          run: |
-            export DISPLAY=:99
-            Xvfb :99 -screen 0 1920x1080x24 > /dev/null 2>&1 &
-            fluxbox &
-  
-        - name: Run Robot Framework Tests
-          run: |
-            cd "automated test cases"
-            robot TestAddCart_1.robot TestAddCart_2.robot TestAddCart_3.robot TestFilterBakery.robot TestFilterCoffee.robot TestFilterMatcha.robot TestSearch_1.robot TestSearch_2.robot TestSearch_3.robot
-  
-        - name: Upload Test Results
-          uses: actions/upload-artifact@v3
-          with:
-            name: robot-ui-test-results
-            path: "./project phase 2/automated test cases/*.html"
+    name: Run Robot Framework UI Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y xvfb fluxbox
+          python -m pip install --upgrade pip
+          pip install robotframework robotframework-seleniumlibrary
+
+      - name: Start Xvfb and Fluxbox
+        run: |
+          export DISPLAY=:99
+          Xvfb :99 -screen 0 1920x1080x24 > /dev/null 2>&1 &
+          fluxbox &
+
+      - name: Run Robot Framework Tests
+        run: |
+          cd "project phase 2/automated test cases"
+          robot TestAddCart_1.robot TestAddCart_2.robot TestAddCart_3.robot TestFilterBakery.robot TestFilterCoffee.robot TestFilterMatcha.robot TestSearch_1.robot TestSearch_2.robot TestSearch_3.robot
+
+      - name: Upload Test Results
+        uses: actions/upload-artifact@v3
+        with:
+          name: robot-ui-test-results
+          path: "project phase 2/automated test cases/*.html"
