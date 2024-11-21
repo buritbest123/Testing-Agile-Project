@@ -2,10 +2,6 @@
 [![Run Jest Tests](https://github.com/beenayaknon/ITCS473-Project-Phase2-ChickyShiningSparklingStar_CuteCute/actions/workflows/main.yml/badge.svg)](https://github.com/beenayaknon/ITCS473-Project-Phase2-ChickyShiningSparklingStar_CuteCute/actions/workflows/main.yml)
 ![Coverage](https://codecov.io/gh/beenayaknon/ITCS473-Project-Phase2-ChickyShiningSparklingStar_CuteCute/branch/main/graph/badge.svg)
 
-![Static Badge](https://img.shields.io/badge/Next.js-blue?style=for-the-badge&logo=Next.js&labelColor=black)![Static Badge](https://img.shields.io/badge/Node.js-%2374ab66?style=for-the-badge&logo=Node.js&labelColor=white)
-
-
-
 ## **ITCS473 - Software Quality Assurance and Testing**
 ### **Mahidol University, ICT**
 
@@ -19,9 +15,8 @@ Bash Coffee url (Available until the end of November): [http://10.34.112.130:300
 ---
 
 ## 💻 **Built With**
-- **Next.js**
-- **Node.js**
-
+- **Next.js** (![Static Badge](https://img.shields.io/badge/Next.js-blue?style=for-the-badge&logo=Next.js&labelColor=black))
+- **Node.js** (![Static Badge](https://img.shields.io/badge/Node.js-%2374ab66?style=for-the-badge&logo=Node.js&labelColor=white))
 ---
 
 ## 🚀 **Features**
