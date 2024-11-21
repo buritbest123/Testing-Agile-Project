@@ -45,7 +45,7 @@ jobs:
   
       defaults:
         run:
-          working-directory: "./project phase 2/automated test cases/"
+          working-directory: ./project\ phase\ 2/automated\ test\ cases/
   
       steps:
         - name: Checkout repository
