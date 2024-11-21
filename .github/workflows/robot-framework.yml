@@ -1,0 +1,48 @@
+name: Robot Framework CI
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  Run-Test:
+    runs-on: ubuntu-20.04
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Step 2: Cache pip dependencies
+      - name: Cache pip dependencies
+        uses: actions/cache@v2
+        id: cache
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+
+      # Step 3: Install pip dependencies
+      - name: Install pip dependencies
+        run: |
+          pip install --upgrade pip
+          pip install robotframework
+
+      # Step 4: Run Robot Framework tests
+      - name: Run Automated UI Tests
+        run: |
+          mkdir -p results
+          robot --outputdir results "E:\Editor\Project\QA\Project\ITCS473-Project-Phase2-ChickyShiningSparklingStar_CuteCute\project phase 2\automated test cases"
+
+      # Step 5: Upload test results
+      - name: Upload Test Results
+        uses: actions/upload-artifact@v2
+        with:
+          name: robot-test-results
+          path: results
+
+      # Step 6: Publish report as a workflow artifact
+      - name: Generate and Publish Report
+        run: |
+          robot --outputdir results --report results/report.html --log results/log.html "E:\Editor\Project\QA\Project\ITCS473-Project-Phase2-ChickyShiningSparklingStar_CuteCute\project phase 2\automated test cases"
