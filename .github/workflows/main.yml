@@ -61,8 +61,20 @@ jobs:
           sudo apt-get install -y xvfb fluxbox google-chrome-stable
           python -m pip install --upgrade pip
           pip install robotframework robotframework-seleniumlibrary
-  
+          sudo apt-get install -y wget unzip xvfb
+          wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+          sudo dpkg -i google-chrome-stable_current_amd64.deb || sudo apt-get install -f -y
+          CHROMEDRIVER_VERSION=$(curl -sS https://chromedriver.storage.googleapis.com/LATEST_RELEASE)
+          wget https://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip
+          unzip chromedriver_linux64.zip -d /usr/local/bin/
+
+      - name: Start Xvfb
+        run: |
+          export DISPLAY=:99
+          Xvfb :99 -screen 0 1920x1080x24 > /dev/null 2>&1 &
+
+
       - name: Run Robot Framework tests
         run: |
-          cd "automated test cases"
+          cd "project phase 2/automated test cases"
           robot TestAddCart_1.robot TestAddCart_2.robot TestAddCart_3.robot TestFilterBakery.robot TestFilterCoffee.robot TestFilterMatcha.robot TestSearch_1.robot TestSearch_2.robot TestSearch_3.robot
