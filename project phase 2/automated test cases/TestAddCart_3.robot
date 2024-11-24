@@ -58,6 +58,15 @@ Navigate Back To Homepage After Add Cream Cheese Danish
     Wait Until Page Contains Element    ${homepage}
     Element Should Be Visible    ${homepage}
 
+Cream Cheese Danish Added In Cart
+    ${cart_button}=    Get WebElement    css:body > main > main > header > ul > li:nth-child(1)
+    Click Element    ${cart_button}
+
+    Wait Until Page Contains Element    css:body > main > div.cartPage_miscContainer__RltQF
+
+    ${item_title}=    Get Text    css:body > main > div.cartPage_itemContainer__Tuk8W > div > div.CartItem_itemInfo__Z5gbv > h3
+    Should Contain    ${item_title}    Cream Cheese Danish
+
 *** Keywords ***
 Add Item To Cart
     [Arguments]    ${item}
