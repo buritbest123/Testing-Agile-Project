@@ -4,8 +4,8 @@ Suite Teardown    Close Browser
 
 *** Variables ***
 ${browser}       Chrome
-${bash_url}      http://localhost:3000/
-# ${bash_url}      http://10.34.112.130:3000/
+# ${bash_url}      http://localhost:3000/
+${bash_url}      http://10.34.112.130:3000/
 
 ${homepage}    css:body > main
 ${search_bar}    css:#searchInput
