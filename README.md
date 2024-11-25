@@ -222,8 +222,7 @@ We use Robot frameworks for Automated UI Testing.
 - 
 
 #### 🎯 Test Report
-
-![Test Report](./project%20phase%202/automated%20test%20cases/All_Test_Report.png)
+![Test Report](./project%20phase%202/automated%20test%20cases/All_Test_Report.jpg)
 
 --------------
 
