@@ -75,6 +75,12 @@ async function insertRecord(db, orderData) {
   
     return await insertRecord(db, orderData);
   }
+
+
+async function getRecordHistory(db) {
+  const record = await db.collection("record").find({}).toArray(); // Node 1
+  return record; // Node 2
+}
   
   
-  module.exports = { insertRecord, insertRecordWithValidation };
+  module.exports = { insertRecord, insertRecordWithValidation, getRecordHistory };

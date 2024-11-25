@@ -27,10 +27,10 @@ const initializePromotionCollectionIfNotExist = require("./Database promotion/pr
 const initializbakeryCollectionIfNotExist = require("./Database bakery/bakery.js");
 const initializeRecordCollectionIfNotExist = require("./record/record.js");
 
-const { addMember, getMemberByPhoneNumber, getAllMembers, getRecordHistory } = require("./Database member/memberController");
+const { addMember, getMemberByPhoneNumber, getAllMembers} = require("./Database member/memberController");
 const { getBakeryItems, getBakeryItemByName, getMenuItems, getMenuItemById } = require("./Database bakery/bakeryController");
 const { getMemberPointsByPhoneNumber, addPointsToMember, redeemPointsFromMember}  = require("./Database member/pointsController");
-const {insertRecord, insertRecordWithValidation}  = require("./record/recordController");
+const {insertRecord, insertRecordWithValidation, getRecordHistory}  = require("./record/recordController");
 
 
 const {
@@ -402,79 +402,79 @@ app.post("/record", async (req, res) => {
 
 
 
-// Function to retrieve record history
-async function getRecordHistory(client) {
-    const record = await db.collection("record").find({}).toArray();
-    return record;
-}
+// // Function to retrieve record history
+// async function getRecordHistory(client) {
+//     const record = await db.collection("record").find({}).toArray();
+//     return record;
+// }
 
-async function insertRecord(client, orderData) {
-  // Define the collection
-  const collection = db.collection("record");
+// async function insertRecord(client, orderData) {
+//   // Define the collection
+//   const collection = db.collection("record");
 
-  // Check if the 'record' collection exists
-  const collections = await db.listCollections().toArray();
-  const collectionExists = collections.some(col => col.name === "record");
-  if (!collectionExists) {
-      await db.createCollection("record");
-      console.log("Collection 'record' created");
-  }
+//   // Check if the 'record' collection exists
+//   const collections = await db.listCollections().toArray();
+//   const collectionExists = collections.some(col => col.name === "record");
+//   if (!collectionExists) {
+//       await db.createCollection("record");
+//       console.log("Collection 'record' created");
+//   }
 
-  // Map over the Menu items in orderData to construct the menuItems array
-  const menuItems = await Promise.all(orderData.Menu.map(async (item) => {
-      const [name, type, price, addOn] = item;
+//   // Map over the Menu items in orderData to construct the menuItems array
+//   const menuItems = await Promise.all(orderData.Menu.map(async (item) => {
+//       const [name, type, price, addOn] = item;
 
-      console.log(`Checking for item: ${name}`); // Add this line to log the name being checked
+//       console.log(`Checking for item: ${name}`); // Add this line to log the name being checked
 
-      // Fetch beverage or bakery item based on name
-      const beverageItem = await db.collection("beverage").findOne({ Drink_Name: name });
-      console.log("Beverage Item:", beverageItem);
+//       // Fetch beverage or bakery item based on name
+//       const beverageItem = await db.collection("beverage").findOne({ Drink_Name: name });
+//       console.log("Beverage Item:", beverageItem);
 
-      const bakeryItem = await db.collection("bakery").findOne({ Bakery_Name: name });
-      console.log("Bakery Item:", bakeryItem);
+//       const bakeryItem = await db.collection("bakery").findOne({ Bakery_Name: name });
+//       console.log("Bakery Item:", bakeryItem);
 
-      let menuItem;
-      if (beverageItem) {
-          // Create a beverage menu item
-          menuItem = {
-              Drink_Name: beverageItem.Drink_Name,
-              Drink_Type: type || beverageItem.DrinkType,
-              Price: price || (type === "COLD" ? beverageItem.Price.coldPrice : beverageItem.Price.hotPrice),
-              Add_On: addOn || "None",
-              category: "beverage",
-          };
-      } else if (bakeryItem) {
-          // Create a bakery menu item
-          menuItem = {
-              Bakery_Name: bakeryItem.Bakery_Name,
-              Bakery_Type: "Bakery",
-              Price: bakeryItem.Price.singlePrice,
-              Add_On: addOn || "None",
-              category: "bakery",
-          };
-      } else {
-          // If the item is not found in either collection
-          throw new Error(`Item not found: ${name}`);
-      }
+//       let menuItem;
+//       if (beverageItem) {
+//           // Create a beverage menu item
+//           menuItem = {
+//               Drink_Name: beverageItem.Drink_Name,
+//               Drink_Type: type || beverageItem.DrinkType,
+//               Price: price || (type === "COLD" ? beverageItem.Price.coldPrice : beverageItem.Price.hotPrice),
+//               Add_On: addOn || "None",
+//               category: "beverage",
+//           };
+//       } else if (bakeryItem) {
+//           // Create a bakery menu item
+//           menuItem = {
+//               Bakery_Name: bakeryItem.Bakery_Name,
+//               Bakery_Type: "Bakery",
+//               Price: bakeryItem.Price.singlePrice,
+//               Add_On: addOn || "None",
+//               category: "bakery",
+//           };
+//       } else {
+//           // If the item is not found in either collection
+//           throw new Error(`Item not found: ${name}`);
+//       }
 
-      return menuItem;
+//       return menuItem;
 
-  }));
+//   }));
 
-  // Prepare the record to insert
-  const record = {
-      Customer: orderData.Customer,
-      Tel: orderData.Tel,
-      Menu: menuItems,
-      promotion: orderData.promotion,
-      totalPrice: orderData.totalPrice,
-      date: new Date() // Adding a timestamp
-  };
+//   // Prepare the record to insert
+//   const record = {
+//       Customer: orderData.Customer,
+//       Tel: orderData.Tel,
+//       Menu: menuItems,
+//       promotion: orderData.promotion,
+//       totalPrice: orderData.totalPrice,
+//       date: new Date() // Adding a timestamp
+//   };
 
-  // Insert the record into the 'record' collection
-  await collection.insertOne(record);
-  console.log("Order inserted into 'record':", record);
-}
+//   // Insert the record into the 'record' collection
+//   await collection.insertOne(record);
+//   console.log("Order inserted into 'record':", record);
+// }
 
 // POST route to create a new record
 app.post("/record", async (req, res) => {

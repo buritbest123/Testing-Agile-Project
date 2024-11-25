@@ -47,7 +47,7 @@ Select Orange Matcha
 
 Select Type, Add-on, Sweetness of Orange Matcha
     ${type_cold}=    Get WebElement    css:#description-page > div > div > div:nth-child(2) > button
-    ${sweetness_75}=    Get WebElement    css:#description-page > div > div > div:nth-child(4) > button.description_option__pWJJk.description_selected__k62fm
+    ${sweetness_75}=    Get WebElement    css:#description-page > div > div > div:nth-child(4) > button:nth-child(4)
     ${addCart_button}=    Get WebElement    css:#description-page > div > div > button
 
     Click Element    ${type_cold}   # select type: cold
@@ -110,6 +110,20 @@ Navigate Back To Homepage After Add Donut
     Click Element    ${close_button}
     Wait Until Page Contains Element    ${homepage}
     Element Should Be Visible    ${homepage}
+
+Donut And Orange Matcha Added In Cart
+    ${cart_button}=    Get WebElement    css:body > main > main > header > ul > li:nth-child(1)
+    Click Element    ${cart_button}
+
+    Wait Until Page Contains Element    css:body > main > div.cartPage_miscContainer__RltQF
+
+    ${item_title_1}=    Get Text    css:body > main > div.cartPage_itemContainer__Tuk8W > div:nth-child(1) > div.CartItem_itemInfo__Z5gbv > h3
+    ${item_detail_1}=    Get Text    css:body > main > div.cartPage_itemContainer__Tuk8W > div:nth-child(1) > div.CartItem_itemInfo__Z5gbv > p
+    Should Contain    ${item_title_1}    Orange Matcha
+    Should Contain    ${item_detail_1}    Cold, 75%
+
+    ${item_title_2}=    Get Text    css:body > main > div.cartPage_itemContainer__Tuk8W > div:nth-child(2) > div.CartItem_itemInfo__Z5gbv > h3
+    Should Contain    ${item_title_2}    Donut
 
 *** Keywords ***
 Add Item To Cart

@@ -78,7 +78,19 @@ Navigate Back To Homepage After Add Caramel Fresh Milk
     Click Element    ${close_button}
     Wait Until Page Contains Element    ${homepage}
     Element Should Be Visible    ${homepage}
+
+Caramel Fresh Milk Added In Cart
+    ${cart_button}=    Get WebElement    css:body > main > main > header > ul > li:nth-child(1)
+    Click Element    ${cart_button}
+
+    Wait Until Page Contains Element    css:body > main > div.cartPage_miscContainer__RltQF
+
+    ${item_title}=    Get Text    css:body > main > div.cartPage_itemContainer__Tuk8W > div > div.CartItem_itemInfo__Z5gbv > h3
+    ${item_detail}=    Get Text    css:body > main > div.cartPage_itemContainer__Tuk8W > div > div.CartItem_itemInfo__Z5gbv > p
+    Should Contain    ${item_title}    Caramel Fresh Milk
+    Should Contain    ${item_detail}    Hot, 50%, Oat Milk
     
+
 *** Keywords ***
 Add Item To Cart
     [Arguments]    ${item}

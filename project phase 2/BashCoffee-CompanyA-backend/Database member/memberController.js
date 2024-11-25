@@ -99,22 +99,8 @@ async function getAllMembers(db) {
   return members; // Node 2
 }
 
-// Function to get record history
-// Initial Node: const record = await db.collection("record").find({}).toArray();
-// Final Node: return record;
-// Basic Blocks (nodes):
-// 1. const record = await db.collection("record").find({}).toArray();
-// 2. return record;
-// Control Flow (edges):
-// 1 -> 2
-async function getRecordHistory(db) {
-  const record = await db.collection("record").find({}).toArray(); // Node 1
-  return record; // Node 2
-}
-
 module.exports = {
   addMember,
   getMemberByPhoneNumber,
   getAllMembers,
-  getRecordHistory,
 };
