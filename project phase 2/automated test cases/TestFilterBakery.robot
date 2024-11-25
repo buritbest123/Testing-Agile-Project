@@ -3,7 +3,8 @@ Library    SeleniumLibrary
 Library    String
 
 *** Variables ***
-${URL}                       http://10.34.112.130:3000/
+# ${URL}                       http://10.34.112.130:3000/
+${URL}                       http://localhost:3000/
 ${BROWSER}                   Chrome
 ${MAIN_MANU}                 xpath=//div[contains(@main, 'pt-20')]
 ${FILTER_BUTTON_COFFEE}      css=.FilterBar_filterButton__njB42:nth-child(2)

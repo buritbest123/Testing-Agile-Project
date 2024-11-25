@@ -1,24 +1,21 @@
 {
   "name": "bashcoffee-companya-backend",
   "version": "1.0.0",
-  "description": "To Run server dont forget to\r npm install\r npm init\r npm install express\r npm install mongodb\r npm install nodemon",
-  "main": "server.js",
+  "description": "In the server.js file, you can change the server port as you prefer<br/>\r Each collection of bakery, beverage, member, and discount are seperated in it's own directory for simpler adjustment<br/>\r for the get method recommended to write adjust or delete in server.js file",
+  "main": "exportRecords.js",
+  "directories": {
+    "test": "tests"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.21.1",
-    "json2csv": "^6.0.0-alpha.2",
-    "mongodb": "^6.10.0",
-    "nodemon": "^3.1.7",
-    "supertest": "^7.0.0"
-  },
-  "devDependencies": {
-    "jest": "^29.7.0"
+    "mongodb": "^6.11.0",
+    "nodemon": "^3.1.7"
   }
 }
