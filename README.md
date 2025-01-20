@@ -227,4 +227,4 @@ We use Robot frameworks for Automated UI Testing.
 --------------
 
 ## 🔍 **System Test**
-- Please see the documentation [System Test Documentation](./project%20phase%202/manual%20test%20cases/ManualTeat_chicky.pdf)
+- Please see the documentation [System Test Documentation](./project%20phase%202/manual%20test%20cases/ManualTest_chicky.pdf)
